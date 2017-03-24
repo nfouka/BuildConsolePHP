@@ -16,4 +16,7 @@ box build
 ```bash
 php build.phar list 
 ```
-
+# You can after download your phar with 
+```bash
+curl -sS https://github.com/nfouka/BuildConsolePHP/raw/master/build.phar -L -o build.phar
+```
