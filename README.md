@@ -22,5 +22,5 @@ curl -sS https://github.com/nfouka/BuildConsolePHP/raw/master/build.phar -L -o b
 ```
 OR ( If you don't have curl you can try ) 
 ```bash
-https://github.com/nfouka/BuildConsolePHP/raw/master/build.phar
+php -r "readfile('https://github.com/nfouka/BuildConsolePHP/raw/master/build.phar');" > drupal.phar
 ```
