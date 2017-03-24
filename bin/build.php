@@ -19,6 +19,7 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Query\ResultSetMapping;
 
 
+
 class AppCommandSymfony extends Command
 {
     protected function configure()
@@ -129,98 +130,10 @@ $style->success('temps d excution est :'.$difference_ms );
 }
 
 
-
-
-
-class SPDO
+foreach ( \Cli\SPDO::getInstance()->query('SELECT id, nom, adress FROM person ') as $membre)
 {
-  /**
-   * Instance de la classe PDO
-   *
-   * @var PDO
-   * @access private
-   */ 
-  private $PDOInstance = null;
- 
-   /**
-   * Instance de la classe SPDO
-   *
-   * @var SPDO
-   * @access private
-   * @static
-   */ 
-  private static $instance = null;
- 
-  /**
-   * Constante: nom d'utilisateur de la bdd
-   *
-   * @var string
-   */
-  const DEFAULT_SQL_USER = 'root';
- 
-  /**
-   * Constante: hôte de la bdd
-   *
-   * @var string
-   */
-  const DEFAULT_SQL_HOST = 'localhost';
- 
-  /**
-   * Constante: hôte de la bdd
-   *
-   * @var string
-   */
-  const DEFAULT_SQL_PASS = 'root';
- 
-  /**
-   * Constante: nom de la bdd
-   *
-   * @var string
-   */
-  const DEFAULT_SQL_DTB = 'index';
- 
-  /**
-   * Constructeur
-   *
-   * @param void
-   * @return void
-   * @see PDO::__construct()
-   * @access private
-   */
-  private function __construct()
-  {
-    $this->PDOInstance = new PDO('mysql:dbname='.self::DEFAULT_SQL_DTB.';host='.self::DEFAULT_SQL_HOST,self::DEFAULT_SQL_USER ,self::DEFAULT_SQL_PASS);    
-  }
- 
-   /**
-    * Crée et retourne l'objet SPDO
-    *
-    * @access public
-    * @static
-    * @param void
-    * @return SPDO $instance
-    */
-  public static function getInstance()
-  {  
-    if(is_null(self::$instance))
-    {
-      self::$instance = new SPDO();
-    }
-    return self::$instance;
-  }
- 
-  /**
-   * Exécute une requête SQL avec PDO
-   *
-   * @param string $query La requête SQL
-   * @return PDOStatement Retourne l'objet PDOStatement
-   */
-  public function query($query)
-  {
-    return $this->PDOInstance->query($query);
-  }
+  echo '<pre>', print_r($membre) ,'</pre>';
 }
-
 
 $application = new Application();
 $application->add(new AppCommandSymfony());

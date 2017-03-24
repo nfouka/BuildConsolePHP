@@ -3,7 +3,7 @@
 {
   "alias": "my-cli.phar",
   "chmod": "0755",
-   "main": "build.php",
+   "main": "bin/build.php",
   "directories": [
     "vendor"
   ],
