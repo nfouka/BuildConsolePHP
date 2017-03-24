@@ -1,12 +1,26 @@
-# BuildConsolePHP
+## BuildConsolePHP
 Build your application with SymfonyConsole and Box2 builder
 
-# update composer 
-composer update 
+## Update composer 
+```bash
+composer update
+```
 
-# build project with box
+
+## Build project with box
+```bash
 box build
+```
 
-# execute helper 
+## Execute helper 
+```bash
 php build.phar list 
-
+```
+## You can after download your phar with 
+```bash
+curl -sS https://github.com/nfouka/BuildConsolePHP/raw/master/build.phar -L -o build.phar
+```
+OR ( If you don't have curl you can try ) 
+```bash
+php -r "readfile('https://github.com/nfouka/BuildConsolePHP/raw/master/build.phar');" > drupal.phar
+```
