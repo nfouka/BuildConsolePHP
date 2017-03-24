@@ -5,7 +5,7 @@
   "chmod": "0755",
    "main": "bin/build.php",
   "directories": [
-    "vendor"
+    "vendor","src"
   ],
   "files": [],
   "output": "build.phar",
