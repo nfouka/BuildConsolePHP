@@ -1,0 +1,13 @@
+
+
+{
+  "alias": "my-cli.phar",
+  "chmod": "0755",
+   "main": "build.php",
+  "directories": [
+    "vendor"
+  ],
+  "files": [],
+  "output": "build.phar",
+  "stub": true
+}
