@@ -1,0 +1,1431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+.s5ssSs.  .s5SSSs.  .s s.  s.  .s5SSSs.  s.  .s5SSSs.  .s5SSSs.  
+   SS SS.       SS.    SS. SS.       SS. SS.       SS.       SS. 
+sS SS S%S sS    `:; sS S%S S%S sS    S%S S%S sS    `:; sS    `:; 
+SS :; S%S SSSs.     SS S%S S%S SS .sSSS  S%S SSSs.     `:;;;;.   
+SS    S%S SS        SS S%S S%S SS    S%S S%S SS              ;;. 
+SS    `:; SS        SS `:; `:; SS    `:; `:; SS              `:; 
+SS    ;,. SS    ;,. SS ;,. ;,. SS    ;,. ;,. SS    ;,. .,;   ;,. 
+:;    ;:' `:;;;;;:' `:;;:'`::' `:;;;;;:' ;:' `:;;;;;:' `:;;;;;:' 
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="http://schema.org/WebPage"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="index, follow">
+<meta http-equiv="imagetoolbar" content="no">
+<title>Fun On The Terminal Part 1 - Get ASCII-FIED</title>
+<link href="ConsoleColor_fichiers/style.css" rel="stylesheet" type="text/css">
+<!--share script-->
+<script type="text/javascript" id="async-buttons" src="ConsoleColor_fichiers/async-buttons.js"></script><script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="ConsoleColor_fichiers/buttons.js"></script>
+<script type="text/javascript">stLight.options({
+publisher: "f0328d25-d3c3-40d8-bbb4-ab6163f85a16", doNotHash: true, doNotCopy: true, hashAddressBar: false, onhover: false });</script>
+<!--end share script-->
+<link rel="stylesheet" type="text/css" href="ConsoleColor_fichiers/buttons.css"><iframe id="stSegmentFrame" name="stSegmentFrame" scrolling="no" sandbox="allow-scripts allow-same-origin" style="display:none;" frameborder="0" width="0px" height="0px"></iframe></head><body>
+&nbsp;<b>MEWBIES@:&nbsp;&nbsp;<a href="https://www.facebook.com/Mewbies" target="_blank">Facebook</a>&nbsp;&nbsp;<a href="https://twitter.com/mewbies" target="_blank">Twitter</a>&nbsp;&nbsp;<a href="https://plus.google.com/+Mewbies" target="_blank">G+</a>&nbsp;&nbsp;<a href="https://www.youtube.com/mewbiesdotcom" target="_blank">YouTube</a>&nbsp;&nbsp;<a href="http://mewbies.deviantart.com/" target="_blank">DeviantArt</a></b>&nbsp;&nbsp;<b><a href="http://mewbies.com/mewbies_posting/index.php" target="_blank">Forum</a>&nbsp;&nbsp;<a href="http://www.yourworldoftext.com/mewbies" target="_blank">Wall</a></b>
+
+<table border="0"><tbody><tr>
+<td>&nbsp;<b><span style="font-size:13px">SHARE:</span></b></td>
+<td><span class="st_facebook_custom" st_processed="yes"></span></td>
+<td><span class="st_twitter_custom" st_via="Mewbies" st_msg="#mewbies" st_processed="yes"></span></td>
+<td><span class="st_googleplus_custom" st_processed="yes"></span></td>
+<td><span class="st_sharethis_custom" st_via="Mewbies" st_msg="#mewbies" st_processed="yes"></span></td>
+</tr></tbody></table><pre>    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+   ██                                                                       ██
+  █▌                    -   <b>FUN ON THE TERMINAL PART 1</b>  -                    █▌
+ █▌                              <b>GET ASCII-FIED</b>                               █▌
+ █                                                                            ▐▌
+ █ <b>NOTES:</b>                                                                     ▐▌
+ █ <b>1.)</b> If you aren't familiar with command lines ending with: <b>\</b> Read <a href="http://www.mewbies.com/comand_line_ending_with_backslash_linux.htm" target="_blank">HERE</a>.    ▐▌
+ █     Do <b>NOT</b> add a space at the end of the <b>\</b> or the cmd won't work.          ▐▌
+ █ <b>2.)</b> Not in color when the examples shown are in color?: Read <a href="http://www.mewbies.com/linux_console_terminal_not_in_color.htm" target="_blank">HERE</a>.         ▐▌
+ █                                                                            ▐▌
+ █                          ___________..___________                          ▐▌
+ █                                                                            ▐▌
+ █ <b><a href="#cowsay">COWSAY</a></b>                                                                     ▐▌
+ █   <b><a href="#cowsayrandom">COWSAY - RANDOM CREATURE EACH TIME</a></b>                                       ▐▌
+ █   <b><a href="http://www.mewbies.com/cowsay_errors_get_entire_collection_of_cows_and_more.htm" target="_blank">COWSAY - DO YOU HAVE ALL 55 COWSAY CREATURES AND MORE?</a></b>                   ▐▌
+ █                                                                            ▐▌
+ █ <b><a href="#toilet">TOILET - MANIPULATE TEXT TO ASCII ART</a></b>                                      ▐▌
+ █                                                                            ▐▌
+ █ <b><a href="#figlet">FIGLET (LINUX, MAC, ETC)</a></b>                                                   ▐▌
+ █   <b><a href="#figlet_eggdrop">FIGLET FOR EGGDROP</a></b>                                                       ▐▌
+ █   <b><a href="#fctcombo">COMBO - FIGLET WITH COWSAY &amp; TOILET</a></b>                                      ▐▌
+ █                                                                            ▐▌
+ █ <b><a href="#fortune">FORTUNE</a></b>                                                                    ▐▌
+ █   <b><a href="#fortunevari">FORTUNE INFO AND VARIATIONS</a></b>                                              ▐▌
+ █   <b><a href="#fortunedb">FORTUNE - HOW TO MAKE YOUR OWN FORTUNE DATABASE FILES</a></b>                    ▐▌
+ █   <b><a href="#cftcombo">COMBOS - FORTUNE, COWSAY &amp; TOILET</a></b>                                        ▐▌
+ █                                                                            ▐▌
+ █ <b><a href="#boxes">BOXES (LINUX &amp; MAC)</a></b>                                                        ▐▌
+ █   <b><a href="#boxescombo">COMBOS - BOXES, COWSAY, FIGLET, FORTUNE (LINUX &amp; MAC)</a></b>                    ▐▌
+ █   <b><a href="#boxesvim">USING BOXES IN A TEXT EDITOR (LINUX &amp; MAC)</a></b>                               ▐▌
+ █                                                                            ▐▌
+ █ <b><a href="#ditaa">DITAA - CONVERT ASCII DIAGRAMS INTO IMAGES (ALL OSes)</a></b>                      ▐▌
+ █   <b><a href="#ditaaboxes">USE BOXES TO HELP CREATE DITAA'S DIAGRAMS</a></b>                                ▐▌
+ █   <b><a href="#ditaaeps">DITTA EPS ADDON</a></b>                                                          ▐▌
+ █                                                                            ▐▌
+ █ <b><a href="#linux_logo">LINUXLOGO - DISPLAY OS LOGO IN ANSI OR ASCII WITH SYSTEM INFORMATION</a></b>       ▐▌
+ █                                                                            ▐▌
+ █ <b><a href="#clock">DISPLAY A CLOCK ON YOUR TERMINAL (LINUX)</a></b>                                   ▐▌
+ █                                                                            ▐▌
+ █                          ___________..___________                          ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="cowsay"></a>COWSAY:</b>                                                                    ▐▌
+ █ ```````                                                ^__^                ▐▌
+ █ To get you in the moo-d lets start with <a href="http://web.archive.org/web/20120225123719/http://www.nog.net/%7Etony/warez/cowsay.shtml" target="_blank">cowsay</a>.       ( oo )               ▐▌
+ █  ______________                                       (____)               ▐▌
+ █ &lt; mewbies rule &gt;                                         U                 ▐▌
+ █  --------------                                                            ▐▌
+ █        \   ,__,                                                            ▐▌
+ █         \  (oo)____                                                        ▐▌
+ █            (__)    )\                                                      ▐▌
+ █               ||--|| *                                                     ▐▌
+ █                                                                            ▐▌
+ █ So cute. I use cowsay on my MOTD (message-of-the-day), view <a href="http://www.mewbies.com/how_to_customize_your_console_login_message_tutorial.htm" target="_blank">HERE</a>.          ▐▌
+ █ I'm also going to use cowsay many times over here in the examples.         ▐▌
+ █ Debian: Install cowsay:                                                    ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>apt-get install cowsay</b>                                                     ▐▌
+ █ (fyi it will install it here: /usr/games/)                                 ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █ There are many variations of cowsay - from changing the eyes to changing   ▐▌
+ █ the cow to another creature.                                               ▐▌
+ █ Some examples of the variations (switches):                                ▐▌
+ █ -f is to select a creature other than the default cow (-f meow)            ▐▌
+ █ -d is tongue sticking out with eyes X'd out                                ▐▌
+ █ -e is winking, -e used with for example ^^ (-e ^^) the eyes are ^^         ▐▌
+ █ Try these:                                                                 ▐▌
+ █ <b>cowsay mewbies rule</b>                                                        ▐▌
+ █ <b>cowsay -f meow mewb</b>                                                        ▐▌
+ █ <b>cowsay -d feed me</b>                                                          ▐▌
+ █ <b>cowsay -e ^^ love me</b>                                                       ▐▌
+ █ <b>cowthink -f www thirsty?</b>                                                   ▐▌
+ █ <b>cowsay -T D -f three-eyes -e @ "$USER is my friend"</b>                        ▐▌
+ █ R rated:                                                                   ▐▌
+ █ <b>cowthink -f head-in you freak</b>                                              ▐▌
+ █                                                                            ▐▌
+ █ Another cowsay idea:                                                       ▐▌
+ █ <b>cowsay "Hello $USER. Server's time &amp; uptime is $(uptime)"</b>                  ▐▌
+ █  __________________________________________                                ▐▌
+ █ / Hello mewbies. Server's time &amp; uptime is \                               ▐▌
+ █ | 09:29:33 up 260 days, 41 min, 1 user,    |                               ▐▌
+ █ \ load average: 0.01, 0.04, 0.00           /                               ▐▌
+ █  ------------------------------------------                                ▐▌
+ █         \   ^__^                                                           ▐▌
+ █          \  (oo)\_______                                                   ▐▌
+ █             (__)\       )\/\                                               ▐▌
+ █                 ||----w |                                                  ▐▌
+ █                 ||     ||                                                  ▐▌
+ █                                                                            ▐▌
+ █ If you don't want wrapped the output that the cow will say/think then use  ▐▌
+ █ the -n switch. For example:                                                ▐▌
+ █ <b>ls | cowsay</b>                                                                ▐▌
+ █ <b>ls | cowsay -n</b>                                                             ▐▌
+ █                                                                            ▐▌
+ █ To view more variables for cow's tongue, eyes, position, etc.:             ▐▌
+ █ <b>man cowsay</b>                                                                 ▐▌
+ █ To leave the man window type: <b>q</b>                                            ▐▌
+ █ Or for a simple list of switches:                                          ▐▌
+ █ <b>cowsay -h</b>                                                                  ▐▌
+ █                                                                            ▐▌
+ █ <b>COWSAY ANOTHER USER THAT IS LOGGED IN (you'll need root):</b>                  ▐▌
+ █ To see who is logged in:                                                   ▐▌
+ █ <b>who</b>                                                                        ▐▌
+ █ reply will be something like:                                              ▐▌
+ █ me    pts/0        2009-07-23 10:19 (123.456.789)                          ▐▌
+ █ user   pts/1        2009-07-23 10:55 (123.456.789)                         ▐▌
+ █ Then using their 'pts' number do this:                                     ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>/usr/games/cowsay -f apt should you be here?&gt;/dev/pts/1</b>                    ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █                                                                            ▐▌
+ █ <b>KEEP COWSAY ON TOP:</b>                                                        ▐▌
+ █ If you want to keep cowsay on top of terminal, run for example:            ▐▌
+ █ clear; <b>/bin/echo -e '\033[10;70r' ; cowsay Reminder! 3:00 eat</b>              ▐▌
+ █ Turn it off: <b>/bin/echo -e '\033[0;0r'</b>                                      ▐▌
+ █ Adjust '10' for cowsay rows (lines) and 70 is your work space.             ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="cowsayrandom"></a>COWSAY - RANDOM CREATURE EACH TIME:</b>                                        ▐▌
+ █ ```````````````````````````````````                                        ▐▌
+ █ Using shuf (shuffle) have a random cowsay creature each time:              ▐▌
+ █ <b>cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) "Hello $USER"</b>           ▐▌
+ █                                                                            ▐▌
+ █ <b><a href="http://www.mewbies.com/cowsay_errors_get_entire_collection_of_cows_and_more.htm" target="_blank"></a>DO YOU HAVE ALL 55 COWSAY CREATURES AND MORE?:</b>                             ▐▌
+ █ ``````````````````````````````````````````````                             ▐▌
+ █ Here is the list of the *55 different creature files to choose from (total ▐▌
+ █ 55 creatures if you follow '<b><a href="http://www.mewbies.com/cowsay_errors_get_entire_collection_of_cows_and_more.htm" target="_blank">HERE</a></b>') replace the creature with one below.    ▐▌
+ █                                                                            ▐▌
+ █ Example: <b>cowsay -f beavis.zen mewbies</b>                                      ▐▌
+ █ (you don't need to type in the file extension '.cow')                      ▐▌
+ █ apt.cow                    <b>**</b>gnu.cow             <b>*</b>small.cow                ▐▌
+ █ beavis.zen.cow             head-in.cow           <b>**</b>snowman.cow             ▐▌
+ █ bong.cow                   hellokitty.cow        <b>*</b>sodomized.cow            ▐▌
+ █ bud-frogs.cow              kiss.cow              sodomized-sheep.cow       ▐▌
+ █ bunny.cow                  kitty.cow             stegosaurus.cow           ▐▌
+ █ <b>**</b>calvin.cow               koala.cow             stimpy.cow                ▐▌
+ █ cheese.cow                 kosh.cow              <b>*</b>supermilker.cow          ▐▌
+ █ <b>**</b>cock.cow                 luke-koala.cow        <b>*</b>surgery.cow              ▐▌
+ █ cower.cow                  mech-and-cow.cow      <b>**</b>suse.cow                ▐▌
+ █ daemon.cow                 meow.cow              <b>*</b>telebears.cow            ▐▌
+ █ default.cow                milk.cow              three-eyes.cow            ▐▌
+ █ dragon-and-cow.cow         moofasa.cow           turkey.cow                ▐▌
+ █ dragon.cow                 moose.cow             turtle.cow                ▐▌
+ █ duck.cow                   mutilated.cow         tux.cow                   ▐▌
+ █ elephant.cow               ren.cow               <b>*</b>udder.cow                ▐▌
+ █ elephant-in-snake.cow      <b>*</b>satanic.cow          vader.cow                 ▐▌
+ █ eyes.cow                   sheep.cow             vader-koala.cow           ▐▌
+ █ flaming-sheep.cow          skeleton.cow          www.cow                   ▐▌
+ █ ghostbusters.cow                                                           ▐▌
+ █                                                                            ▐▌
+ █ To easily preview every creature on the list above click <a href="http://www.mewbies.com/geek_fun_files/cowsay/cowsay_creatures.txt" target="_blank">HERE</a>.             ▐▌
+ █ Or run this cmd to preview every creature you have installed:              ▐▌
+ █ <b>for cowsay in `ls -1 /usr/share/cowsay/cows | grep .cow | cut -d . -f 1`; \</b>▐▌
+ █ <b>do echo; cowsay -f $cowsay Me is "$cowsay"; done &gt;&gt; cowsay_creatures.txt</b>   ▐▌
+ █ Then view the file:                                                        ▐▌
+ █ <b>less cowsay_creatures.txt</b>                                                  ▐▌
+ █ Press your enter key or arrow keys to scroll.                              ▐▌
+ █ To quit less: <b>q</b>                                                            ▐▌
+ █                                                                            ▐▌
+ █                                                                            ▐▌
+ █ P.S. Inspired by cowsay is a desktop graphical '<a href="http://www.doof.me.uk/xcowsay/" target="_blank">xcowsay</a>' for BSD, Linux    ▐▌
+ █ and Mac, no Win v :(.                                                      ▐▌
+     <img alt="xcowsay" src="ConsoleColor_fichiers/xcowsay_cow_small.png" border="0" width="237" height="161">
+ █ Just short notes for xcowsay since it is for GUI:                          ▐▌
+ █ <b>apt-get update</b>                                                             ▐▌
+ █ <b>apt-get install xcowsay</b>                                                    ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █ Test it:                                                                   ▐▌
+ █ <b>xcowsay Moo</b>                                                                ▐▌
+ █ Ubuntu - if that doesn't work for you, try this install script <a href="http://ubuntuforums.org/showthread.php?t=1682417" target="_blank">HERE</a> by     ▐▌
+ █ clockworkpc.                                                               ▐▌
+ █                                                                            ▐▌
+ █                          ___________..___________                          ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="toilet"></a>TOILET - MANIPULATE TEXT TO ASCII ART:</b>                                     ▐▌
+ █ ``````````````````````````````````````                                     ▐▌
+ █ <a href="http://caca.zoy.org/wiki/toilet" target="_blank">TOIlet</a> by caca labs (I'm serious and giggling) can manipulate and colorize ▐▌
+ █ text, create ASCII art text and it can also be used to easily change       ▐▌
+ █ cowsay's style (we'll get to that later). Debian package page <a href="https://packages.debian.org/sid/text/toilet" target="_blank">HERE</a>.        ▐▌
+ █                                                                            ▐▌
+        <img alt="toilet" src="ConsoleColor_fichiers/toilet_output_to_html_screenshot.png" border="0" width="511" height="132">
+ █                                                                            ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>aptitude update</b>                                                            ▐▌
+ █ <b>aptitude install toilet</b>                                                    ▐▌
+ █ Reply (depending on previously installed) will be similar to:              ▐▌
+ █ The following NEW packages will be installed:                              ▐▌
+ █ libcaca0{a} toilet toilet-fonts{a}                                         ▐▌
+ █ Type in <b>y</b> to agree and hit enter key.                                      ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █                                                                            ▐▌
+ █ Lets play with TOIlet:                                                     ▐▌
+ █ <b>toilet "Mewbies"</b>                                                           ▐▌
+ █ <b>toilet --gay "Mewbies"</b>                                                     ▐▌
+ █ <b>toilet --metal "Mewbies"</b>                                                   ▐▌
+ █ <b>toilet -F flip --gay "Mewbies"</b>                                             ▐▌
+ █ <b>toilet -F flop "mewbies"</b>                                                   ▐▌
+ █ <b>toilet -F 180 "mewbies"</b>                                                    ▐▌
+ █ <b>toilet -F left "mewbies"</b>                                                   ▐▌
+ █ <b>toilet -F right "mewbies"</b>                                                  ▐▌
+ █ With a plain border and gay text:                                          ▐▌
+ █ <b>toilet -F gay -F border "mewbies"</b>                                          ▐▌
+ █ With a gay border and plain text:                                          ▐▌
+ █ <b>toilet -F border -F gay "MEWBIES"</b>                                          ▐▌
+ █                                                                            ▐▌
+        <img alt="toilet" src="ConsoleColor_fichiers/toilet_example_screenshot.png" border="0" width="511" height="268">
+ █                                                                            ▐▌
+ █ For more switches:                                                         ▐▌
+ █ <b>toilet --help</b>                                                              ▐▌
+ █                                                                            ▐▌
+ █ FIGlet's program 'showfigfonts' only shows the .flf files.                 ▐▌
+ █ TOIlet uses .flf and its own figlet like fonts .tlf                        ▐▌
+ █ TOIlet-fonts are installed same locatin as FIGlet's: /usr/share/figlet/    ▐▌
+ █ <b>ls /usr/share/figlet/ | grep .*lf</b>                                          ▐▌
+ █ (the *.flc files in that directory are the TOIlet's figlet control files)  ▐▌
+ █ To preview the TOIlet fonts, thanks to unixmonkey3987 at                   ▐▌
+ █ <a href="http://www.commandlinefu.com/commands/view/6065/show-demo-of-toilet-fonts" target="_blank">commandline.fu</a>:                                                            ▐▌
+ █ <b>find /usr/share/figlet -name *.tlf -exec basename {} \; | \</b>                ▐▌
+ █ <b>sed -e "s/\..lf$//" | xargs -I{} toilet -f {} {}</b>                           ▐▌
+ █                                                                            ▐▌
+ █ To use them, for example:                                                  ▐▌
+ █ <b>toilet -f pagga "Sample Text"</b>                                              ▐▌
+ █ <b>toilet -f mono9 "Sample Text"</b>                                              ▐▌
+ █ TOIlet with just one color, selecting the font 'pagga':                    ▐▌
+ █ <b>echo -e "\e[01;32m$(toilet -f pagga "mewbies")\e[00m"</b>                      ▐▌
+ █                                                                            ▐▌
+ █ TOIlet also supports output to several other formats. For example to HTML  ▐▌
+ █ that I used to create the color mewbies.com page above:                    ▐▌
+ █ <b>toilet -f bigmono9 --gay --html "mewbies.com" &gt;&gt; toilet.html</b>               ▐▌
+ █ toilet.html will be in your working directory. I changed the background to ▐▌
+ █ black myself, <a href="http://www.mewbies.com/geek_fun_files/toilet/toilet_output_to_html.htm" target="_blank">HERE</a> it is.                                                  ▐▌
+ █                                                                            ▐▌
+ █ To view other formats TOIlet can export to:                                ▐▌
+ █ <b>toilet --export list</b>                                                       ▐▌
+ █                                                                            ▐▌
+ █                          ___________..___________                          ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="figlet"></a>FIGLET (LINUX, MAC, ETC):</b>                                                  ▐▌
+ █ `````````````````````````                                                  ▐▌
+ █ <a href="http://www.figlet.org/" target="_blank">FIGlet</a> - "make large character ASCII banners out of ordinary text".        ▐▌
+ █                                                                            ▐▌
+                 <img alt="figlet" src="ConsoleColor_fichiers/figlet_nix_screenshot.png" border="0" width="370" height="223">
+ █                                                                            ▐▌
+ █ To install:                                                                ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>aptitude update</b>                                                            ▐▌
+ █ <b>aptitude install figlet</b>                                                    ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █ Lets play with it:                                                         ▐▌
+ █ <b>figlet</b>                                                                     ▐▌
+ █ Now type any text and press enter as many times as you like. This will be  ▐▌
+ █ the default font 'standard.flf'.                                           ▐▌
+ █                          _     _                                           ▐▌
+ █  _ __ ___   _____      _| |__ (_) ___  ___                                 ▐▌
+ █ | '_ ` _ \ / _ \ \ /\ / / '_ \| |/ _ \/ __|                                ▐▌
+ █ | | | | | |  __/\ V  V /| |_) | |  __/\__ \                                ▐▌
+ █ |_| |_| |_|\___| \_/\_/ |_.__/|_|\___||___/                                ▐▌
+ █                                                                            ▐▌
+ █ To exit FIGlet in this mode press Crtl+c.                                  ▐▌
+ █                                                                            ▐▌
+ █ <b>TO VIEW ALL OF FIGLET'S FONT:</b>                                              ▐▌
+ █ To view all the .flf fonts in FIGlet's directory:                          ▐▌
+ █ <b>ls /usr/share/figlet | grep .flf</b>                                           ▐▌
+ █                                                                            ▐▌
+ █ To view all available FIGlet fonts in their own formatting including the   ▐▌
+ █ font's name:                                                               ▐▌
+ █ <b>showfigfonts</b>                                                               ▐▌
+ █                                                                            ▐▌
+ █ To view all available FIGlet fonts with your own text, thanks to tips by   ▐▌
+ █ Carla Schroder and a reply <a href="http://www.linux.com/learn/docs/686943-linux-tips-fun-with-figlet-and-toilet" target="_blank">HERE</a> by Sergio:                                 ▐▌
+ █ <b>for font in `ls -1 /usr/share/figlet | grep .flf | cut -d . -f 1`; \</b>       ▐▌
+ █ <b>do echo "$font:"; figlet -f $font mewbies; done</b>                            ▐▌
+ █                                                                            ▐▌
+ █ Included with FIGlet are two helper programs, man each:                    ▐▌
+ █ <b>chkfont</b> - checks figlet 2.0 and up font files for format errors            ▐▌
+ █ <b>figlist</b> - lists figlet fonts and control files                             ▐▌
+ █                                                                            ▐▌
+ █ To specify which font to use (figlet -f [font name] [text]):               ▐▌
+ █ <b>figlet -f slant mewbies</b>                                                    ▐▌
+ █                            __    _                                         ▐▌
+ █    ____ ___  ___ _      __/ /_  (_)__  _____                               ▐▌
+ █   / __ `__ \/ _ \ | /| / / __ \/ / _ \/ ___/                               ▐▌
+ █  / / / / / /  __/ |/ |/ / /_/ / /  __(__  )                                ▐▌
+ █ /_/ /_/ /_/\___/|__/|__/_.___/_/\___/____/                                 ▐▌
+ █                                                                            ▐▌
+ █ Change color to magenta and use bubble font:                               ▐▌
+ █ <b>echo -e "\e[01;35m$(figlet -f bubble mewbies)\e[00m"</b>                       ▐▌
+ █  <font color="#ff00ff"> _   _   _   _   _   _   _ </font>                                               ▐▌
+ █  <font color="#ff00ff">/ \ / \ / \ / \ / \ / \ / \</font>                                               ▐▌
+ █ <font color="#ff00ff">( m | e | w | b | i | e | s )</font>                                              ▐▌
+ █  <font color="#ff00ff">\_/ \_/ \_/ \_/ \_/ \_/ \_/ </font>                                              ▐▌
+ █                                                                            ▐▌
+ █ Reverse it:                                                                ▐▌
+ █ <b>echo -e "\e[01;35m$(figlet -f bubble mewbies | rev)\e[00m"</b>                 ▐▌
+ █  <font color="#ff00ff"> _   _   _   _   _   _   _ </font>                                               ▐▌
+ █  <font color="#ff00ff">\ / \ / \ / \ / \ / \ / \ /</font>                                               ▐▌
+ █ <font color="#ff00ff">) s | e | i | b | w | e | m (</font>                                              ▐▌
+ █ <font color="#ff00ff"> /_\ /_\ /_\ /_\ /_\ /_\ /_\ </font>                                              ▐▌
+ █                                                                            ▐▌
+ █ To center (-c), and don't smush characters (-k), and reverse order of the  ▐▌
+ █ charaters (-R reads from right to left):                                   ▐▌
+ █ <b>figlet -ckRf slant mewbies</b>                                                 ▐▌
+ █                            _  __                                           ▐▌
+ █               _____ ___   (_)/ /_  _      __ ___   ____ ___                ▐▌
+ █              / ___// _ \ / // __ \| | /| / // _ \ / __ `__ \               ▐▌
+ █             (__  )/  __// // /_/ /| |/ |/ //  __// / / / / /               ▐▌
+ █            /____/ \___//_//_.___/ |__/|__/ \___//_/ /_/ /_/                ▐▌
+ █                                                                            ▐▌
+ █ Pipe a command through FIGlet, for example date:                           ▐▌
+ █ <b>date | figlet</b>                                                              ▐▌
+ █ For many more options:                                                     ▐▌
+ █ <b>figlet -h</b>                                                                  ▐▌
+ █ <b>man figlet</b>                                                                 ▐▌
+ █ To leave the man window type: <b>q</b>                                            ▐▌
+ █                                                                            ▐▌
+ █ <b>MORE FIGLET FONTS:</b>                                                         ▐▌
+ █ There are many other FIGlet fonts available on the net. Start <a href="http://www.figlet.org/fontdb.cgi" target="_blank">HERE</a> at      ▐▌
+ █ figlet.org or <a href="http://www.jave.de/figlet/fonts.html" target="_blank">HERE</a> jave.de has a zipped file containing 263 .flf FIGlets.  ▐▌
+ █ Both sites have full examples of the FIGlets. To preview all 263 of the    ▐▌
+ █ FIGlet fonts in the jave.de zip click <a href="http://www.mewbies.com/geek_fun_files/figlet/figlet_jave.de_zip_only_prev.txt" target="_blank">HERE</a>.                                ▐▌
+ █                                                                            ▐▌
+ █ Download the ones you want for example:                                    ▐▌
+ █ <b>wget http://www.figlet.org/fonts/acrobatic.flf</b>                             ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>cp acrobatic.flf /usr/share/figlet/acrobatic.flf</b>                           ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █ <b>rm acrobatic.flf</b>                                                           ▐▌
+ █                                                                            ▐▌
+ █ Side Note: The FIGlet dosrebel (meant for Win), the design it produces     ▐▌
+ █ does work on <a href="http://www.mewbies.com/how_to_install_glftpd_tutorial.htm#15" target="_blank">GLFtpd site welcome</a>.                                          ▐▌
+ █                                                                            ▐▌
+ █                          ___________..___________                          ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="figlet_eggdrop"></a>FIGLET FOR EGGDROP:</b>                                                        ▐▌
+ █ ```````````````````                                                        ▐▌
+ █                                                                            ▐▌
+               <img alt="figlet for IRC bot" src="ConsoleColor_fichiers/figlet_bot_irc_screenshot.png" border="0" width="392" height="203">
+ █                                                                            ▐▌
+ █ <a href="https://github.com/DMXRoid/eggdrop-figlet" target="_blank">figlet.tcl</a> - Is a script for eggdrop bots to output text in figlet format  ▐▌
+ █ using any figlet font available to your local figlet install to an IRC     ▐▌
+ █ channel. Find it <a href="https://github.com/DMXRoid/eggdrop-figlet/blob/master/figlet.tcl" target="_blank">here</a>.                                                     ▐▌
+ █ Just a quicky how to install a script in case you haven't before, change   ▐▌
+ █ the paths to match yours:                                                  ▐▌
+ █ <b>cd ~/bot/scripts</b>                                                           ▐▌
+ █ <b>wget https://raw.github.com/DMXRoid/eggdrop-figlet/master/figlet.tcl</b>       ▐▌
+ █ Optional, don't need to do this; to change the !trigger command for users; ▐▌
+ █ it is !pretty:                                                             ▐▌
+ █ <b>pico figlet.tcl</b>                                                            ▐▌
+ █ Change this:                                                               ▐▌
+ █ set channelTrigger "!pretty"                                               ▐▌
+ █ set msgTrigger "pretty"                                                    ▐▌
+ █ To:                                                                        ▐▌
+ █ set channelTrigger "!fig"                                                  ▐▌
+ █ set msgTrigger "fig"                                                       ▐▌
+ █                                                                            ▐▌
+ █ Then add the script to your bot's conf file:                               ▐▌
+ █ <b>pico ~/bot/bot.conf</b>                                                        ▐▌
+ █ Almost at the end with the other scripts add:                              ▐▌
+ █ source scripts/figlet.tcl                                                  ▐▌
+ █                                                                            ▐▌
+ █ <b>.rehash</b> your bot, then in your IRC channel:                                ▐▌
+ █ <b>!pretty test</b>                                                               ▐▌
+ █ Or your own trigger if you changed it. Output if a font isn't declared is  ▐▌
+ █ font Standard. To declare font do as the sample above in your channel:     ▐▌
+ █ <b>!pretty bubble::mewbies</b>                                                    ▐▌
+ █                                                                            ▐▌
+ █ Since users don't know what figlet fonts are installed on your local you   ▐▌
+ █ could provide a list with samples for them.                                ▐▌
+ █ For example have a !trigger to provide a <a href="http://pastebin.com/08Pr68aG" target="_blank">URL</a> to it or to download a list.  ▐▌
+ █                                                                            ▐▌
+ █ mIRC users to view figlet's output properly you might need to change the   ▐▌
+ █ font to Lucida Console for example: right click on channel name in list on ▐▌
+ █ left, select Font.                                                         ▐▌
+ █                                                                            ▐▌
+ █                          ___________..___________                          ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="fctcombo"></a>COMBO - FIGLET WITH COWSAY &amp; TOILET:</b>                                       ▐▌
+ █ ````````````````````````````````````                                       ▐▌
+ █ <b>cowsay -f apt mewbies | figlet -f term | toilet --gay -f term</b>              ▐▌
+ █ The cow even knows Cherokee:                                               ▐▌
+ █ <b>figlet -f tsalagi -k "mewbies" | cowsay -f moose -n</b>                        ▐▌
+ █   _____________________________________                                    ▐▌
+ █ / -|- ___         __   ______    __   \                                    ▐▌
+ █ |  |   |         `  \   |  |    /  \  |                                    ▐▌
+ █ |  |   |_,  /|    _  | .|()|_,__\___  |                                    ▐▌
+ █ |  | _ | ' /_| |  |  |()|' | '    \   |                                    ▐▌
+ █ \   _|_|__/   \_\_|_/  _|__|_  \__/   /                                    ▐▌
+ █  -------------------------------------                                     ▐▌
+ █   \                                                                        ▐▌
+ █    \   \_\_    _/_/                                                        ▐▌
+ █     \      \__/                                                            ▐▌
+ █            (oo)\_______                                                    ▐▌
+ █            (__)\       )\/\                                                ▐▌
+ █                ||----w |                                                   ▐▌
+ █                ||     ||                                                   ▐▌
+ █                                                                            ▐▌
+ █ (Cherokee FIGlet is from figlet.org <a href="ftp://ftp.figlet.org/pub/figlet/fonts/international.tar.gz" target="_blank">International pack</a>.)                   ▐▌
+ █                                                                            ▐▌
+ █                          ___________..___________                          ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="fortune"></a>FORTUNE:</b>                                                                   ▐▌
+ █ ````````                                                                   ▐▌
+ █ <a href="http://en.wikipedia.org/wiki/Fortune_%28Unix%29" target="_blank">Fortune</a> - "print a random, hopefully interesting, adage". Such as:         ▐▌
+ █ "Everything will be just tickety-boo today."                               ▐▌
+ █                                                                            ▐▌
+ █ To install Fortune (we are going to use it with cowsay):                   ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>apt-get install fortune</b>                                                    ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █                                                                            ▐▌
+ █ Test Fortune:                                                              ▐▌
+ █ <b>fortune</b>                                                                    ▐▌
+ █ For Fortune help:                                                          ▐▌
+ █ <b>man fortune</b>                                                                ▐▌
+ █ To leave the man window type: <b>q</b>                                            ▐▌
+ █ It installs here /usr/games/ &amp; data files here /usr/share/games/fortunes   ▐▌
+ █ Thats it, <i>done</i>. Can <a href="#cftcombo">skip the rest of this section</a>. Or continue on to       ▐▌
+ █ customize it:                                                              ▐▌
+ █                                                                            ▐▌
+ █ <a name="fortunevari"></a><b>FORTUNE INFO AND VARIATIONS:</b>                                               ▐▌
+ █ ````````````````````````````                                               ▐▌
+ █ To view mods for Fortune:                                                  ▐▌
+ █ <b>apt-cache search fortune-mod</b>                                               ▐▌
+ █ Reply is:                                                                  ▐▌
+ █ fortune-mod - provides fortune cookies on demand                           ▐▌
+ █ fortunes-min - Data files containing fortune cookies                       ▐▌
+ █ fortunes-off - Data files containing offensive fortune cookies             ▐▌
+ █ fortunes - Data files containing fortune cookies                           ▐▌
+ █                                                                            ▐▌
+ █ Three data files (types of quotes) come with Fortune:                      ▐▌
+ █ <b>ls /usr/share/games/fortunes</b>                                               ▐▌
+ █ Reply is:                                                                  ▐▌
+ █ fortunes.dat  literature.dat  riddles.dat                                  ▐▌
+ █ To view the percentage that Fortune uses each of those data files:         ▐▌
+ █ Reply is:                                                                  ▐▌
+ █ <b>/usr/games/fortune -f</b>                                                      ▐▌
+ █ 100.00% /usr/share/games/fortunes                                          ▐▌
+ █     15.59% riddles                                                         ▐▌
+ █     52.50% fortunes                                                        ▐▌
+ █     31.91% literature                                                      ▐▌
+ █                                                                            ▐▌
+ █ To select a data file to read from; specify it:                            ▐▌
+ █ <b>fortune riddles</b>                                                            ▐▌
+ █ Example reply:                                                             ▐▌
+ █ Q:      How many supply-siders does it take to change a light bulb?        ▐▌
+ █ A:      None.  The darkness will cause the light bulb to change by itself. ▐▌
+ █                                                                            ▐▌
+ █ These three data files are enough...but if you wanted more types, custom   ▐▌
+ █ data files can be easily added to Fortune. One such is 'The Art of War'    ▐▌
+ █ found <a href="http://www.de-brauwer.be/wiki/wikka.php?wakka=TheArtOfWar" target="_blank">HERE</a>.  If you would like to use it:                                  ▐▌
+ █ <b>wget http://www.de-brauwer.be/wastebasket/fortunes-taow-1.0.tar.gz</b>         ▐▌
+ █ <b>tar xvzf fortunes-taow-1.0.tar.gz</b>                                          ▐▌
+ █ <b>cd fortunes-taow-1.0</b>                                                       ▐▌
+ █ <b>cat README</b>                                                                 ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>cp taow taow.dat /usr/share/games/fortunes</b>                                 ▐▌
+ █ Test it:                                                                   ▐▌
+ █ <b>/usr/games/fortune taow</b>                                                    ▐▌
+ █ Reply example:                                                             ▐▌
+ █     Sun Tzu said:  In war, the general receives                            ▐▌
+ █     his commands from the sovereign, collects his army                     ▐▌
+ █     and concentrates his forces                                            ▐▌
+ █                                 --The Art of War by Sun Tzu                ▐▌
+ █                                   Chapter VIII: Variation in Tactics       ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █ <b>fortune taow</b> or <b>fortune tao</b> works                                          ▐▌
+ █                                                                            ▐▌
+ █ View again the percentage that fortune uses each data file:                ▐▌
+ █ <b>/usr/games/fortune -f</b>                                                      ▐▌
+ █ 100.00% /usr/share/games/fortunes                                          ▐▌
+ █     10.69% riddles                                                         ▐▌
+ █     36.01% fortunes                                                        ▐▌
+ █     31.41% taow                                                            ▐▌
+ █     21.89% literature                                                      ▐▌
+ █ Or to view only taow's percentage:                                         ▐▌
+ █ <b>/usr/games/fortune -f 2&gt;&amp;1| grep taow</b>                                      ▐▌
+ █      31.41% taow                                                           ▐▌
+ █                                                                            ▐▌
+ █ Install a compilation of 40 fortune data files. View <a href="http://download.gna.org/pdbv/demo_html/demo_2.0.10/package/fortunes_1:1.99.1-1.html" target="_blank">HERE</a>.                 ▐▌
+ █ To install it:                                                             ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>apt-get install fortunes</b>                                                   ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █ <b>ls /usr/share/games/fortunes</b>                                               ▐▌
+ █ View again the percentage that fortune uses each data file:                ▐▌
+ █ <b>/usr/games/fortune -f</b>                                                      ▐▌
+ █ Reply is <a href="http://www.mewbies.com/geek_fun_files/fortune_percentage_after_installing_compilation.txt" target="_blank">HERE</a>(the "0.02% mewb", we are going to create that after this).   ▐▌
+ █                                                                            ▐▌
+ █ One of the data files in the compilation is ASCII-art:                     ▐▌
+ █ <b>fortune ascii-art</b>                                                          ▐▌
+ █ Example reply:                                                             ▐▌
+ █                  ___          ______           Frobtech, Inc.              ▐▌
+ █                 /__/\     ___/_____/\                                      ▐▌
+ █                 \  \ \   /         /\\                                     ▐▌
+ █                  \  \ \_/__       /  \         "If you've got the job,     ▐▌
+ █                  _\  \ \  /\_____/___ \         we've got the frob."       ▐▌
+ █                 // \__\/ /  \       /\ \                                   ▐▌
+ █         _______//_______/    \     / _\/______                             ▐▌
+ █        /      / \       \    /    / /        /\                            ▐▌
+ █     __/      /   \       \  /    / /        / _\__                         ▐▌
+ █    / /      /     \_______\/    / /        / /   /\                        ▐▌
+ █   /_/______/___________________/ /________/ /___/  \                       ▐▌
+ █   \ \      \    ___________    \ \        \ \   \  /                       ▐▌
+ █    \_\      \  /          /\    \ \        \ \___\/                        ▐▌
+ █       \      \/          /  \    \ \        \  /                           ▐▌
+ █        \_____/          /    \    \ \________\/                            ▐▌
+ █             /__________/      \    \  /                                    ▐▌
+ █             \   _____  \      /_____\/                                     ▐▌
+ █              \ /    /\  \    / \  \ \                                      ▐▌
+ █               /____/  \  \  /   \  \ \                                     ▐▌
+ █               \    \  /___\/     \  \ \                                    ▐▌
+ █                \____\/            \__\/                                    ▐▌
+ █                                                                            ▐▌
+ █ <b>PDP coder humor from the 70's:</b>                                             ▐▌
+ █ If you installed the compilation of fortune files, view first line of      ▐▌
+ █ fortunes' computers:                                                       ▐▌
+ █ <b>head -n 1 /usr/share/games/fortunes/computers</b>                              ▐▌
+ █                                                                            ▐▌
+ █ It has: !07/11 PDP a ni deppart m'I  !pleH                                 ▐▌
+ █ Reverse it:                                                                ▐▌
+ █ <b>head -n 1 /usr/share/games/fortunes/computers | rev</b>                        ▐▌
+ █ Reply:                                                                     ▐▌
+ █ Help!  I'm trapped in a PDP 11/70!                                         ▐▌
+ █ <a href="http://en.wikipedia.org/wiki/Programmed_Data_Processor" target="_blank">PDP</a> - Programmed Data Processor, the assembler for PDP machine programs at ▐▌
+ █ that time, viewed by the programmer caused the content to appear           ▐▌
+ █ backwards.                                                                 ▐▌
+ █                                                                            ▐▌
+ █ Install <a href="https://packages.debian.org/squeeze/fortunes-off" target="_blank">offensive fortunes</a>:                                                ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>aptitude install fortunes-off</b>                                              ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █ <b>fortune off</b>                                                                ▐▌
+ █ Reply for example:                                                         ▐▌
+ █ The religion of one age is the literary entertainment of the next.         ▐▌
+ █                                                                            ▐▌
+ █                          ___________..___________                          ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="fortunedb"></a>FORTUNE - HOW TO MAKE YOUR OWN FORTUNE DATABASE FILES:</b>                     ▐▌
+ █ ``````````````````````````````````````````````````````                     ▐▌
+ █ To create your own Fortune data files it's super easy:                     ▐▌
+ █ Create a file, naming it anything you like, for example:                   ▐▌
+ █ <b>pico mewb</b>                                                                  ▐▌
+ █ Paste in your quotes, each separated by the percentage symbol: %           ▐▌
+ █ Your quotes could be anything, like Linux cmd line tips from a variety of  ▐▌
+ █ man pages that you need often, quotes from your IRC channel, etc.          ▐▌
+ █ For example paste in:                                                      ▐▌
+ █ %                                                                          ▐▌
+ █ mewbies rule!                                                              ▐▌
+ █ %                                                                          ▐▌
+ █ I luv mewbies                                                              ▐▌
+ █ %                                                                          ▐▌
+ █ mewb me                                                                    ▐▌
+ █ %                                                                          ▐▌
+ █                                                                            ▐▌
+ █ Save the file (Ctrl+x, y, press Enter key).                                ▐▌
+ █ Then to create its database:                                               ▐▌
+ █ <b>strfile mewb</b>                                                               ▐▌
+ █ Reply would be:                                                            ▐▌
+ █ There were 3 strings                                                       ▐▌
+ █ Longest string: 14 bytes                                                   ▐▌
+ █ Shortest string: 8 bytes                                                   ▐▌
+ █                                                                            ▐▌
+ █ Copy the two files created to fortunes:                                    ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>cp mewb mewb.dat /usr/share/games/fortunes</b>                                 ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █ Test it:                                                                   ▐▌
+ █ <b>fortune mewb</b>                                                               ▐▌
+ █                                                                            ▐▌
+ █                          ___________..___________                          ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="cftcombo"></a>COMBOS - FORTUNE, COWSAY &amp; TOILET:</b>                                         ▐▌
+ █ ``````````````````````````````````                                         ▐▌
+ █ <b>COWSAY WITH FORTUNE:</b>                                                       ▐▌
+ █ <b>fortune | cowsay -n -f hellokitty</b>                                          ▐▌
+ █  _______________________________________________________________________   ▐▌
+ █ &lt; Dinosaurs aren't extinct.  They've just learned to hide in the trees. &gt;  ▐▌
+ █  -----------------------------------------------------------------------   ▐▌
+ █   \                                                                        ▐▌
+ █    \                                                                       ▐▌
+ █       /\_)o&lt;                                                               ▐▌
+ █      |      \                                                              ▐▌
+ █      | O . O|                                                              ▐▌
+ █       \_____/                                                              ▐▌
+ █                                                                            ▐▌
+ █ Or select one of Fortune's data base files:                                ▐▌
+ █ <b>fortune riddles | cowsay -n -f small</b>                                       ▐▌
+ █  _____________________________________________________________             ▐▌
+ █ / Q:      How does a hacker fix a function which              \            ▐▌
+ █ |         doesn't work for all of the elements in its domain? |            ▐▌
+ █ \ A:      He changes the domain.                              /            ▐▌
+ █  -------------------------------------------------------------             ▐▌
+ █        \   ,__,                                                            ▐▌
+ █         \  (oo)____                                                        ▐▌
+ █            (__)    )\                                                      ▐▌
+ █               ||--|| *                                                     ▐▌
+ █                                                                            ▐▌
+ █ You can also run the cmd like this:                                        ▐▌
+ █ <b>cowsay -f small "$(fortune riddles)"</b>                                       ▐▌
+ █                                                                            ▐▌
+ █ If you receive the error "cowsay: Could not find small cowfile!" scroll    ▐▌
+ █ up to <a href="#cowsayerror">HERE</a> - cowsay explaining how to fix this error OR don't use 'small'  ▐▌
+ █ use a different creature.                                                  ▐▌
+ █                                                                            ▐▌
+ █ Instead of using Fortune you could pipe one of <a href="http://en.wikipedia.org/wiki/Cave_Johnson_%28Portal%29" target="_blank">Cave Johnson's</a> quote        ▐▌
+ █ through cowsay, thanks to ColOfNature at <a href="http://www.commandlinefu.com/commands/view/8418/the-wisdom-of-cave-johnson" target="_blank">commandline.fu</a>:                   ▐▌
+ █ <b>curl -s http://www.cavejohnsonhere.com/random/ | grep quote_main \</b>         ▐▌
+ █ <b>| cut -d \&gt; -f 2- | fmt -w $(tput cols) | cowsay</b>                           ▐▌
+ █ Which gives an idea to offer any types of quotes online to be utilized in  ▐▌
+ █ this manner.                                                               ▐▌
+ █                                                                            ▐▌
+ █ <b>COWSAY WITH TOILET:</b>                                                        ▐▌
+ █ <b>cowsay -f moose "hellooo mewbies" | toilet --gay -f term</b>                   ▐▌
+ █                                                                            ▐▌
+                         <img alt="cowsay with toilet" src="ConsoleColor_fichiers/cowsay_with_toilet_gay.png" border="0" width="198" height="120"> 
+ █                                                                            ▐▌
+ █ Lets expand on this: A random cow (creature) selected each time, saying    ▐▌
+ █ Hello to the user's name in rainbow colors using the font term:            ▐▌
+ █ <b>cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) "Hello $USER" | \</b>       ▐▌
+ █ <b>toilet --gay -f term</b>                                                       ▐▌
+ █                                                                            ▐▌
+ █ <b>FORTUNE WITH TOILET:</b>                                                       ▐▌
+ █ <b>fortune | toilet --metal -f term</b>                                           ▐▌
+ █                                                                            ▐▌
+ █ <b>NOW LETS TRY ALL - COWSAY, TOILET &amp; FORTUNE TOGETHER:</b>                      ▐▌
+ █  ________________________________________                                  ▐▌
+ █ / ss?l ?kil I bna ??kil bluohs I sa ll?w \                                 ▐▌
+ █ | sa flah uoy fo flah wonk t'nob I       |                                 ▐▌
+ █ | .?vr?s?b uoy sa ll?w sa flah uoy fo    |                                 ▐▌
+ █ \ flah naht n?ikloT .? .? .? --          /                                 ▐▌
+ █  ----------------------------------------                                  ▐▌
+ █        \ (__)                                                              ▐▌
+ █          (oo)                                                              ▐▌
+ █    /------\/                                                               ▐▌
+ █   / |    ||                                                                ▐▌
+ █  *  /\---/\                                                                ▐▌
+ █     ~~   ~~                                                                ▐▌
+ █ All output is '--gay (rainbow)':                                           ▐▌
+ █ <b>fortune | cowsay -f apt | toilet --gay -f term</b>                             ▐▌
+ █ All output is 'metal' using a random creature:                             ▐▌
+ █ <b>fortune | cowsay -f $(ls /usr/share/cowsay/cows/ | shuf -n1) | \</b>           ▐▌
+ █ <b>toilet --metal -f term</b>                                                     ▐▌
+ █ Only fortune output is using a TOIlet figlet font:                         ▐▌
+ █ <b>fortune | toilet -f pagga | cowsay -n -f apt</b>                               ▐▌ 
+ █ All output is light green:                                                 ▐▌
+ █ <b>echo -e "\e[01;32m$(fortune | cowthink -f apt)\e[00m"</b>                      ▐▌
+ █ All output is magenta, fortune output is flipped:                          ▐▌
+ █ <b>echo -e "\e[35m$(fortune | toilet -f term -F flip | cowsay -f apt)\e[00m"</b>  ▐▌
+ █ All output is green (not using TOIlet), using a random creature:           ▐▌
+ █ <b>echo -e "\e[32m$(/usr/games/fortune | cowsay -f \</b>                          ▐▌
+ █ <b>$(ls /usr/share/cowsay/cows/ | shuf -n1))\e[00m"</b>                           ▐▌
+ █<font color="#00a000">  _________________________________________ </font>                                ▐▌
+ █ <font color="#00a000">/ I have also been a huge Unix fan ever   \</font>                                ▐▌
+ █ <font color="#00a000">| since I realized that SCO was not Unix. |</font>                                ▐▌
+ █ <font color="#00a000">\ -- Dennis Baker                         /</font>                                ▐▌
+ █  <font color="#00a000">----------------------------------------- </font>                                ▐▌
+ █   <font color="#00a000">\            .    .     .</font>                                                ▐▌
+ █    <font color="#00a000">\      .  . .     `  ,  </font>                                                ▐▌
+ █     <font color="#00a000">\    .; .  : .' :  :  : .</font>                                              ▐▌
+ █      <font color="#00a000">\   i..`: i` i.i.,i  i .</font>                                              ▐▌
+ █       <font color="#00a000">\   `,--.|i |i|ii|ii|i: </font>                                             ▐▌
+ █            <font color="#00a000">UooU\.'@@@@@@`.||'</font>                                              ▐▌
+ █            <font color="#00a000">\__/(@@@@@@@@@@)' </font>                                              ▐▌
+ █                 <font color="#00a000">(@@@@@@@@)</font>                                                 ▐▌
+ █                 <font color="#00a000">`YY~~~~YY'</font>                                                 ▐▌
+ █                  <font color="#00a000">||    ||</font>                                                  ▐▌
+ █ The last one I use on one of my <a href="http://www.mewbies.com/how_to_customize_your_console_login_message_tutorial.htm" target="_blank">MOTDs</a> so all users see it on login. Looks  ▐▌
+ █ better on a black background, view <a href="http://www.mewbies.com/geek_fun_files/cowsay/cowsay_fortune_output_green_on_black.htm" target="_blank">HERE</a>.                                   ▐▌
+ █                                                                            ▐▌
+ █                                                                            ▐▌
+ █ <b>OUTPUT DATE AND TIME WITH COWSAY &amp; TOILET:</b>                                 ▐▌
+ █ <b>cowsay -f apt "It is $(date)" | toilet --gay -f term</b>                       ▐▌
+ █ or                                                                         ▐▌
+ █ <b>cowsay -f bud-frogs "It is $(date '+%D %T')" | toilet -f term</b>              ▐▌
+ █  _________________________                                                 ▐▌
+ █ &lt; It is 02/19/12 08:09:07 &gt;                                                ▐▌
+ █  -------------------------                                                 ▐▌
+ █      \                                                                     ▐▌
+ █       \                                                                    ▐▌
+ █           oO)-.                       .-(Oo                                ▐▌
+ █          /__  _\                     /_  __\                               ▐▌
+ █          \  \(  |     ()~()         |  )/  /                               ▐▌
+ █           \__|\ |    (-___-)        | /|__/                                ▐▌
+ █           '  '--'    ==`-'==        '--'  '                                ▐▌
+ █                                                                            ▐▌
+ █                          ___________..___________                          ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="boxes"></a>BOXES (LINUX &amp; MAC):</b>                                                       ▐▌
+ █ ````````````````````                                                       ▐▌
+ █ Boxes, by <a href="http://boxes.thomasjensen.com/" target="_blank">Thomas Jensen</a>, "is a text filter which can draw any kind of      ▐▌
+ █ ASCII art around its input text". "Boxes is designed to be tied to your    ▐▌
+ █ editor as a text filter."                                                  ▐▌
+ █   ____________________________________________________________________     ▐▌
+ █  /\                                                                   \    ▐▌
+ █  \_|        /\          /\          /\          /\          /\        |    ▐▌
+ █    |     /\//\\/\    /\//\\/\    /\//\\/\    /\//\\/\    /\//\\/\     |    ▐▌
+ █    |  /\//\\\///\\/\//\\\///\\/\//\\\///\\/\//\\\///\\/\//\\\///\\/\  |    ▐▌
+ █    | //\\\//\/\\///\\\//\/\\///\\\//\/\\///\\\//\/\\///\\\//\/\\///\\ |    ▐▌
+ █    | \\//\/          ,                                         \/\\// |    ▐▌
+ █    |  \/         /\^/`\                                           \/  |    ▐▌
+ █    |  /\        | \/   |    ________________                      /\  |    ▐▌
+ █    | //\\       | |    |   ( mewbies.com    )          jgs       //\\ |    ▐▌
+ █    | \\//       \ \    /   ( examples of    )        _ _         \\// |    ▐▌
+ █    |  \/         '\\//'    ( boxes command  )      _{ ' }_        \/  |    ▐▌
+ █    |  /\           ||      ( line for linux )     { `.!.` }       /\  |    ▐▌
+ █    | //\\          ||       ----------------      ',_/Y\_,'      //\\ |    ▐▌
+ █    | \\//          ||  ,          o   ,__,          {_,_}        \\// |    ▐▌
+ █    |  \/       |\  ||  |\          o  (O~)____        |           \/  |    ▐▌
+ █    |  /\       | | ||  | |            (__)    )\    (\|  /)       /\  |    ▐▌
+ █    | //\\      | | || / /              U||--|| *     \| //       //\\ |    ▐▌
+ █    | \\//       \ \||/ /                              |//        \\// |    ▐▌
+ █    |  \/         `\\//`   \   \./    \\   \./    \ \\ |/ /        \/  |    ▐▌
+ █    |  /\        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^       /\  |    ▐▌
+ █    | //\\/\                                                    /\//\\ |    ▐▌
+ █    | \\///\\/\//\\\///\\/\//\\\///\\/\//\\\///\\/\//\\\///\\/\//\\\// |    ▐▌
+ █    |  \/\\///\\\//\/\\///\\\//\/\\///\\\//\/\\///\\\//\/\\///\\\//\/  |    ▐▌
+ █    |     \/\\//\/    \/\\//\/    \/\\//\/    \/\\//\/    \/\\//\/     |    ▐▌
+ █    |        \/          \/          \/          \/          \/        |    ▐▌
+ █    |   _______________________________________________________________|_   ▐▌
+ █     \_/_________________________________________________________________/  ▐▌
+ █                                                                            ▐▌
+ █ For this tutorial I'll give example of boxes on the command line and boxes ▐▌
+ █ with the text editor Vim / Vi.                                             ▐▌
+ █                                                                            ▐▌
+ █ <b>INSTALL BOXES:</b>                                                             ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>aptitude update &amp;&amp; aptitude install boxes</b>                                  ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █                                                                            ▐▌
+ █ <b>SHOW OF ALL THE BOXES DESIGNS:</b>                                             ▐▌
+ █ To list all boxes' designs listed on the configuration with their          ▐▌
+ █ description:                                                               ▐▌
+ █ <b>boxes -l</b>                                                                   ▐▌
+ █ Or to scroll through:                                                      ▐▌
+ █ <b>boxes -l | more</b>                                                            ▐▌
+ █ To quit: <b>q</b>                                                                 ▐▌
+ █ Or                                                                         ▐▌
+ █ <b>boxes -l | less</b>                                                            ▐▌
+ █ Or to output the list to a file:                                           ▐▌
+ █ <b>boxes -l &gt;&gt; boxes_list_of_boxes.txt</b>                                        ▐▌
+ █ The list it creates will be in your working directory.                     ▐▌
+ █ View Debian output list <a href="http://www.mewbies.com/geek_fun_files/boxes/boxes_list_of_boxes_debian.txt" target="_blank">HERE</a> containing 43 designs and Win output list     ▐▌
+ █ <a href="http://www.mewbies.com/geek_fun_files/boxes/boxes_list_of_boxes_windows.txt" target="_blank">HERE</a> containing 50 designs. Click <a href="http://www.mewbies.com/geek_fun_files/boxes/boxes_list_of_boxes_windows_extra_7.txt" target="_blank">HERE</a> to view the extra 7 boxes only in   ▐▌
+ █ Win v.                                                                     ▐▌
+ █ The extra boxes in Win is probably due to it being the latest v. When      ▐▌
+ █ installing by aptitude it isn't always the latest v but it is suppose to   ▐▌
+ █ be the most stable.                                                        ▐▌
+ █ If you want all 50 designs install boxes manually or download the tar,     ▐▌
+ █ extract the boxes.cfg and replace yours with it, done.                     ▐▌
+ █                                                                            ▐▌
+ █ Boxes' system-wide configuration file is here for Debian:                  ▐▌
+ █ /etc/boxes/boxes-config                                                    ▐▌
+ █ You could create your own config file here:                                ▐▌
+ █ $HOME/.boxes                                                               ▐▌
+ █                                                                            ▐▌
+ █ <b>BOXES ON THE COMMAND LINE:</b>                                                 ▐▌
+ █ Though boxes was designed to be used with text editors that support        ▐▌
+ █ filters we can still use it on the command line by piping (|) any text     ▐▌
+ █ based output through it.                                                   ▐▌
+ █                                                                            ▐▌
+ █ Examples of inputting your own text:                                       ▐▌
+ █ <b>echo "mewbies.com example of boxes command line for linux" | boxes</b>         ▐▌
+ █ Reply:                                                                     ▐▌
+ █ /*******************************************************/                  ▐▌
+ █ /* mewbies.com example of boxes command line for linux */                  ▐▌
+ █ /*******************************************************/                  ▐▌
+ █                                                                            ▐▌
+ █ To input multiple lines we'll add on to the code above -                   ▐▌
+ █ -e (execute), \t (text), \n (new line), select box design -d [design],     ▐▌
+ █ center the output  a -c:                                                   ▐▌
+ █ <b>echo -e "\tmewbies.com\n\texamples of\n\tboxes command line" | boxes -d mouse -a c</b>
+ █                               .--,       .--,                              ▐▌
+ █                              ( (  \.---./  ) )                             ▐▌
+ █                               '.__/o   o\__.'                              ▐▌
+ █                                  {=  ^  =}                                 ▐▌
+ █                                   &gt;  -  &lt;                                  ▐▌
+ █                            ___.""`-------`"".__                            ▐▌
+ █                           /                    \                           ▐▌
+ █                           \    mewbies.com     /                           ▐▌
+ █                           /    examples of     \                           ▐▌
+ █                           \ boxes command line /                           ▐▌
+ █                           /                    \                           ▐▌
+ █                           \____________________/                           ▐▌
+ █                                ___)( )(___                                 ▐▌
+ █                               (((__) (__)))                                ▐▌
+ █                                                                            ▐▌
+ █ Examples of commands with a text output piped (|) through boxes:           ▐▌
+ █ <b>whoami | boxes -d parchment -a c</b>                                           ▐▌
+ █  ___________                                                               ▐▌
+ █ /\          \                                                              ▐▌
+ █ \_| mewbies |                                                              ▐▌
+ █   |         |                                                              ▐▌
+ █   |   ______|_                                                             ▐▌
+ █    \_/________/                                                            ▐▌
+ █                                                                            ▐▌
+ █ Date and Time:                                                             ▐▌
+ █ <b>date | boxes -a hcvc</b>                                                       ▐▌
+ █ /********************************/                                         ▐▌
+ █ /* Sun Apr 28 04:42:40 EDT 2013 */                                         ▐▌
+ █ /********************************/                                         ▐▌
+ █                                                                            ▐▌
+ █ Boxes example page <a href="http://boxes.thomasjensen.com/examples.shtml" target="_blank">HERE</a> shows many examples of the options including how   ▐▌
+ █ to remove a box.                                                           ▐▌
+ █ <b>man boxes</b>                                                                  ▐▌
+ █ To quit man: <b>q</b>                                                             ▐▌
+ █                                                                            ▐▌
+ █ <b>BOXES INPUT THE CONTENTS OF A TEXT FILE:</b>                                   ▐▌
+ █ You can input a text file for boxes to print out. For example create a     ▐▌
+ █ text file if you don't have one, put a few lines of text in it, save it,   ▐▌
+ █ then input the file's name to boxes. For example:                          ▐▌
+ █ <b>boxes -d sunset -a c &lt; boxes_test_input.txt</b>                
+                ▐▌
+ █ Reply:                                                               
+      ▐▌
+ █                   .                                                  
+      ▐▌
+ █              .    |    .                                             
+      ▐▌
+ █               \   |   /                                              
+      ▐▌
+ █           '.   \  '  /   .'                                          
+      ▐▌
+ █             '. .'```'. .'                                            
+      ▐▌
+ █ &lt;&gt;.....:::::::`.......`:::::::....&lt;&gt;                     
+                  ▐▌
+ █ &lt;&gt;:         mewbies.com          :&lt;&gt;                     
+                  ▐▌
+ █ &lt;&gt;:examples of boxes command line:&lt;&gt;                     
+                  ▐▌
+ █ &lt;&gt;:          for linux           :&lt;&gt;                     
+                  ▐▌
+ █ &lt;&gt;:..............................:&lt;&gt;                     
+                  ▐▌
+ █ 
+&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;
+                                       ▐▌
+ █                                                                      
+      ▐▌
+ █ <b><a name="boxescombo"></a>COMBOS - BOXES, COWSAY, FIGLET, TOILET - HTML (LINUX &amp; MAC):</b>               ▐▌
+ █ ````````````````````````````````````````````````````````````               ▐▌
+ █                                                                            ▐▌
+ █ <b>COMBO - BOXES, COWSAY:</b>                                                     ▐▌
+ █ The large pretty framed cow with the flowers at the beginning was produced ▐▌
+ █ using triple boxes:                                                        ▐▌
+ █ <b>cowthink -f small -W 15 -e O~ -T U mewbies.com examples of boxes command \</b> ▐▌
+ █ <b>line for linux | boxes -d spring -a hcvc | boxes -d diamonds -a hcvc | \</b>   ▐▌
+ █ <b>boxes -d parchment -a hcvc</b>                                                 ▐▌
+ █                                                                            ▐▌
+ █ <b>COMBO - BOXES &amp; FIGLET:</b>                                                    ▐▌
+ █ <b>figlet -f slant mewbies | boxes -d peek -pa2t0b0</b>                           ▐▌
+ █ /*       _\|/_                                                             ▐▌
+ █          (o o)                                                             ▐▌
+ █  +----oOO-{_}-OOo---------------------------------+                        ▐▌
+ █  |                             __    _            |                        ▐▌
+ █  |     ____ ___  ___ _      __/ /_  (_)__  _____  |                        ▐▌
+ █  |    / __ `__ \/ _ \ | /| / / __ \/ / _ \/ ___/  |                        ▐▌
+ █  |   / / / / / /  __/ |/ |/ / /_/ / /  __(__  )   |                        ▐▌
+ █  |  /_/ /_/ /_/\___/|__/|__/_.___/_/\___/____/    |                        ▐▌
+ █  |                                                |                        ▐▌
+ █  +-----------------------------------------------*/                        ▐▌
+ █                                                                            ▐▌
+ █ <b>COMBO - BOXES OUTPUT TO HTML USING TOILET:</b>                                 ▐▌
+ █ Output boxes in rainbow colors to HTML using TOIlet:                       ▐▌
+ █ <b>cowsay -f small  yummm | boxes -d spring -a hcvc | toilet --gay -f term \</b>  ▐▌
+ █ <b>--html &gt;&gt; boxes_toilet_to_html.htm</b>                                         ▐▌
+ █ <a href="http://www.mewbies.com/geek_fun_files/boxes/boxes_toilet_to_html.htm" target="_blank">HERE</a> are the results (I touched up the htm file).                          ▐▌
+ █ <a href="http://www.mewbies.com/geek_fun_files/boxes/boxes_list_toilet_to_html.htm" target="_blank">HERE</a> are all the boxes designs in rainbow colors.                          ▐▌
+ █                                                                            ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="boxesvim"></a>USING BOXES IN A TEXT EDITOR (LINUX &amp; MAC):</b>                                ▐▌
+ █ ```````````````````````````````````````````                                ▐▌
+ █ To do this we need to use a text editor that supports command line         ▐▌
+ █ arguments and or filters (vim, emacs, and jed). I'm a simple pico user so  ▐▌
+ █ I'll go over the steps one by one in <a href="http://www.vim.org/" target="_blank">Vim</a> as I know how frustrating it can  ▐▌
+ █ be to use the first time with all the keyboard shortcuts.                  ▐▌
+ █                                                                            ▐▌
+ █ Launch vim creating a test file, for example:                              ▐▌
+ █ <b>vim boxes_vim_test.txt</b>                                                     ▐▌
+ █ You can type in a few lines of text or                                     ▐▌
+ █ Launch its command line mode - any command run will output the results to  ▐▌
+ █ your open file. We'll run ls. To do this:                                  ▐▌
+ █ Press your keys Esc+Shift (represented by :) then ! starts it's command    ▐▌
+ █ window: Esc + Shift then !                                                 ▐▌
+ █                                                                            ▐▌
+ █ If your vim is like mine you won't see anything happen until you press     ▐▌
+ █ another key.                                                               ▐▌
+ █ So press another key, like: <b>l</b>                                              ▐▌
+ █ Now the bottom of your window should have: :.!                             ▐▌
+ █ That is the command mode.                                                  ▐▌
+ █ Type in: <b>ls</b> (if your terminal showed the l:.!l then only add an s)         ▐▌
+ █ Press Enter.                                                               ▐▌
+ █ Tada! ls output.                                                           ▐▌
+ █ To go back to insert mode - editing your text, press: <b>i</b>                    ▐▌
+ █ Move the cursor marker to the start of the area you want enclosed in a     ▐▌
+ █ box using your arrow keys.                                                 ▐▌
+ █                                                                            ▐▌
+ █ Now to 'mark' / highlight the text that we want enclosed in boxes:         ▐▌
+ █ Esc + Shift, then                                                          ▐▌
+ █ <b>v</b> for character selection or                                               ▐▌
+ █ <b>V</b> (Shift+v) for line selection                                             ▐▌
+ █ Bottom of window it should now state "-- VISUAL LINE --"                   ▐▌
+ █                                                                            ▐▌
+ █ Use your arrow keys to highlight the area to be enclosed.                  ▐▌
+ █ Once area is highlighted that you want in the box press: <b>!</b>                 ▐▌
+ █ Type in your boxes command just like we did above, for example:            ▐▌
+ █ <b>boxes -d xes -a hcvc</b>                                                       ▐▌
+ █ Press Enter                                                                ▐▌
+ █ Press i to go back into insert mode.                                       ▐▌
+ █                                                                            ▐▌
+ █ <b>TO CREATE KEYBOARD SHORTCUTS FOR BOXES COMMAND LINE WITHIN VIM:</b>            ▐▌
+ █ Some of the practical uses of boxes:                                       ▐▌
+ █ -Comment out code using c-cmt. Result /* to all lines marked in a nice box ▐▌
+ █  shape.                                                                    ▐▌
+ █ -Comment code in HTML using -d html. Result &lt;!-- --&gt; to all lines marked   ▐▌
+ █  in a nice box shape.                                                      ▐▌
+ █ -Indentation handling.                                                     ▐▌
+ █ These are commands that you might use often and want a shortcut for within ▐▌
+ █ your text editor, such as vim.                                             ▐▌
+ █ On <a href="http://boxes.thomasjensen.com/docs/install.shtml" target="_blank">boxes installation page</a> he gives you an example for the box 'c-cmt'     ▐▌
+ █ (commenting out code).                                                     ▐▌
+ █ Debian vim's system-wide config file is here: /etc/vim/vimrc               ▐▌
+ █                                                                            ▐▌
+ █                          ___________..___________                          ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="ditaa"></a>DITAA - CONVERT ASCII DIAGRAMS INTO IMAGES (ALL OSes):</b>                     ▐▌
+ █ ``````````````````````````````````````````````````````                     ▐▌
+ █ <a href="http://ditaa.sourceforge.net/" target="_blank">Ditaa</a> "'<b>DI</b>agrams <b>T</b>hrough <b>A</b>scii <b>A</b>rt' is a small command-line utility        ▐▌
+ █ written in Java, that can convert diagrams drawn using ascii art           ▐▌
+ █ ('drawings' that contain characters that resemble lines like | / - ), into ▐▌
+ █ proper bitmap graphics." This is a lovely little program that easily       ▐▌
+ █ produces beautiful diagrams.                                               ▐▌
+ █                                                                            ▐▌
+ █ <b>PREREQUISITE:</b>                                                              ▐▌
+ █ java - To view if installed:                                               ▐▌
+ █ <b>java</b>                                                                       ▐▌
+ █ If the output is it's options; you have it. If reply is:                   ▐▌
+ █ -bash: java: command not found                                             ▐▌
+ █ You need to install it:                                                    ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>aptitude install sun-java6-jre</b>                                             ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █                                                                            ▐▌
+ █ Go <a href="http://sourceforge.net/projects/ditaa/" target="_blank">HERE</a> to find the latest version of ditaa, then:                         ▐▌
+ █ <b>cd ~ &amp;&amp; mkdir ditaa &amp;&amp; cd ditaa</b>                                            ▐▌
+ █ <b>wget http://jaist.dl.sourceforge.net/project/ditaa/ditaa/0.9/ditaa0_9.zip</b>  ▐▌
+ █ <b>unzip ditaa0_9.zip</b>                                                         ▐▌
+ █ Done :).                                                                   ▐▌
+ █ <b>java -jar ditaa0_9.jar --help</b>                                              ▐▌
+ █                                                                            ▐▌
+ █ Create a diagram to use with it. For this I've used the example on         ▐▌
+ █ ditaa's site and added to it to show all shapes / icons. The image above   ▐▌
+ █ is from this diagram:                                                      ▐▌
+ █ <b>pico ditaa_example.txt</b>                                                     ▐▌
+ █ Paste in and save:                                                         ▐▌
+
+   +---------+   +-------+   +-------+    +--------+      +--------+
+   | Document|---+ split +---|       |----|        |-----&gt;|        |
+   | o  this |   +-------+   |Diagram|    | Storage|      | In/Out |
+   | o  that |   |   me  |   |       |    |        |      |        |
+   |  cRED{d}|-+ |   cGRE|   |   cBLK| /--| cBLU{s}|  /-*-|cPNK{io}|
+   +----+----+ : +-------+   +-------+ |  +--------+  |   +--------+
+        :      |     ^                 |              |
+        |      v     |     /--------\  |  /--------\  |   
+        +------------+     | Rounded|&lt;-/  | Rounded|-*+  *--------*
+                           | Corners|     | Dashed | |   | Point  |
+                           |    c33F|     |        | +-*-*  Mark  *
+                           \-+------/     \-=------/     |    c1FF|
+                                                         *--------*
+ █                                                                            ▐▌
+ █ btw <a href="http://www.asciiflow.com/" target="_blank">asciiflow.com</a> you can easily draw diagrams and export to text or HTML. ▐▌
+ █ You should be able to export to DITAA but the link wouldn't load for me.   ▐▌
+ █ Furthermore the <s>code is open source, here at github.com</s>, if you want to    ▐▌
+ █ put on your own web server. Update - I can only find on GitHub bug         ▐▌
+ █ tracking for ASCIIFlow, not the code, <a href="https://github.com/lewish" target="_blank">here</a>.                                ▐▌
+ █                                                                            ▐▌
+ █ Then:                                                                      ▐▌
+ █ <b>java -jar ditaa0_9.jar ditaa_example.txt</b>                                   ▐▌
+ █ Results:                                                                   ▐▌
+<img alt="ditaa_example" src="ConsoleColor_fichiers/ditaa_example.png" border="0" width="657" height="187">
+ █                                                                            ▐▌
+ █ Open in a viewer or download from shell to view it; ditaa_example.png      ▐▌
+ █                                                                            ▐▌
+ █ <a href="http://ditaa.sourceforge.net/" target="_blank">Ditaa's site</a> list all the settings.                                        ▐▌
+ █                                                                            ▐▌
+ █ <b>HTML EXAMPLE:</b>                                                              ▐▌
+ █ <b>cp ditaa_example.txt ditaa_example.htm</b>                                     ▐▌
+ █ <b>pico ditaa_example.htm</b>                                                     ▐▌
+ █ Add this to the top of the file:                                           ▐▌
+ █ &lt;pre class="textdiagram" id="test"&gt;                                        ▐▌
+ █ And this to the bottom of the file:                                        ▐▌
+ █ &lt;/pre&gt;                                                                     ▐▌
+ █ <b>java -jar ditaa0_9.jar -h ditaa_example.htm</b>                                ▐▌
+ █ Output: [snip]                                                             ▐▌
+ █ Convering HTML file (ditaa_example.htm -&gt; ditaa_example_processed.html)..  ▐▌
+ █ [snip]                                                                     ▐▌
+ █         images/test.png                                                    ▐▌
+ █                                                                            ▐▌
+ █ The HTML file created will have this only: &lt;img src="images/test.png" /&gt;   ▐▌
+ █ <a href="http://www.mewbies.com/geek_fun_files/ditaa/ditaa_example_processed.html" target="_blank">HERE</a> are the results.                                                      ▐▌
+ █                                                                            ▐▌
+ █ Ditaa can be used a web serivice using <a href="https://github.com/athoune/Ditaa-web/" target="_blank">Ditaa-web</a>.                          ▐▌
+ █                                                                            ▐▌
+ █ Ditaa usage is even easier if using with 'Boxes'. I've created box         ▐▌
+ █ diagrams/templates to use with Boxes for ditaa:                            ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="ditaaboxes"></a>USE BOXES TO HELP CREATE DITAA'S DIAGRAMS:</b>                                 ▐▌
+ █ ``````````````````````````````````````````                                 ▐▌
+ █ To automatically create the diagrams for ditaa you could use '<a href="http://www.mewbies.com/acute_terminal_fun_01_get_ascii-fied_on_the_terminal.htm#boxes" target="_blank">Boxes</a>'.      ▐▌
+ █ If you didn't install Boxes manually or have v1.0.1a and below you won't   ▐▌
+ █ have the box 'stone'.                                                      ▐▌
+ █ Stone is the perfect box to create most of the ditaa's icons.              ▐▌
+ █ Test if you have stone:                                                    ▐▌
+ █ echo "mewbies {d}" | boxes -d stone -a c                                   ▐▌
+ █ If you do, you are good to go on most of the ditaa icons. If you want more ▐▌
+ █ ditaa type box designs for more diagrams continue -                        ▐▌
+ █                                                                            ▐▌
+ █ If you don't have 'stone' AND OR want to have other ditaa type boxes this  ▐▌
+ █ is an easy fix.                                                            ▐▌
+ █ If we create our own Boxes configuration file here ~/.boxes, Boxes will    ▐▌
+ █ not read off the system's boxes' config file (/etc/boxes/boxes-config); we ▐▌
+ █ will only have access to the box designs in ~/.boxes. So instead we are    ▐▌
+ █ going to get the latest boxes config file and add our own box designs to   ▐▌
+ █ it for it ditaa. Of course if you have root access you can add/replace     ▐▌
+ █ boxes-config file with the latest and your own designs.                    ▐▌
+ █                                                                            ▐▌
+ █ Check <a href="http://boxes.thomasjensen.com/" target="_blank">HERE</a> for the latest v of boxes then:                                 ▐▌
+ █ <b>cd ~</b>                                                                       ▐▌
+ █ <b>wget http://boxes.thomasjensen.com/download/boxes-1.1.1.src.tar.gz</b>         ▐▌
+ █ <b>tar xvfz boxes-1.1.1.src.tar.gz</b>                                            ▐▌
+ █ If you have already created your own .boxes file back it up, if not skip:  ▐▌
+ █ <b>mv .boxes .boxes_backup</b>                                                    ▐▌
+ █                                                                            ▐▌
+ █ Then copy the new config to be your .boxes config file:                    ▐▌
+ █ <b>cp boxes-1.1.1/boxes-config .boxes</b>                                         ▐▌
+ █ Done. When you run boxes now it will now read off ~/.boxes                 ▐▌
+ █                                                                            ▐▌
+ █ Using Boxes' stone we can create ditaa's icons for example:                ▐▌
+ █ Document: <b>echo "mewbies {d}"| boxes -d stone -a c</b>                          ▐▌
+ █ Diagram:  <b>echo "mewbies"| boxes -d stone -a c</b>                              ▐▌
+ █ Storage:  <b>echo "mewbies {s}"| boxes -d stone -a c</b>                          ▐▌
+ █ In/Out:   <b>echo "mewbies {io}"| boxes -d stone -a c</b>                         ▐▌
+ █ Create all round corners, use the -r switch:                               ▐▌
+ █ <b>echo -e "\tmewbies.com\n\t cBLK" | boxes -d stone -a c -p \</b>                ▐▌
+ █ <b>t2b1  &gt;  ditaa_round.txt</b>                                                   ▐▌
+ █ <b>java -jar ditaa0_9.jar -r ditaa_round.txt</b>                                  ▐▌
+ █                                                                            ▐▌
+                               <img alt="ditaa_round" src="ConsoleColor_fichiers/boxes_for_ditaa_round.png" border="0" width="151" height="95">
+ █                                                                            ▐▌
+ █ And of course you can feed it a file with your text instead of echo.       ▐▌
+ █                                                                            ▐▌
+ █ Create a pink Storage icon:                                                ▐▌
+ █ <b>cd ditaa</b>                                                                   ▐▌
+ █ <b>echo -e "\tmewbies.com\n\t{s} cPNK" | boxes -d stone -a c -p \</b>             ▐▌
+ █ <b>t2b1  &gt; ditaa_pnk.txt</b>                                                      ▐▌
+ █ <b>java -jar ditaa0_9.jar ditaa_pnk.txt</b>                                       ▐▌
+ █                                                                            ▐▌
+                               <img alt="ditaa_round" src="ConsoleColor_fichiers/boxes_for_ditaa.png" border="0" width="152" height="110">
+ █                                                                            ▐▌
+ █ For the Split icon - edit a created diagram with the line across before    ▐▌
+ █ processing.                                                                ▐▌
+ █                                                                            ▐▌
+ █ The icons / styles that we still need and that I have made a <a href="http://boxes.thomasjensen.com/docs/" target="_blank">Boxes 'box'</a>   ▐▌
+ █ for each are:                                                              ▐▌
+ █  1. Point Marker <b>dt-point</b>                                                  ▐▌
+ █  2. Dashed Line <b>dt-dash</b>                                                    ▐▌
+ █     And Rounded Corners selection - many variations depending on which and ▐▌
+ █     how many of the corners are to be rounded. I've created eight:         ▐▌
+ █  3. <b>dt-round2tlbr</b>:   top left, bottom right rounded                        ▐▌
+ █  4. <b>dt-round2trbl</b>:   top right, bottom left rounded.                       ▐▌
+ █  5. <b>dt-round1tr</b>:     top right rounded                                     ▐▌
+ █  6. <b>dt-round1tl</b>:     top left rounded                                      ▐▌
+ █  7. <b>dt-round1br</b>:     bottom right rounded                                  ▐▌
+ █  8. <b>dt-round1bl</b>:     bottom left rounded                                   ▐▌
+ █  9. <b>dt-round3trblbr</b>: top right, bottom left, bottom right rounded          ▐▌
+ █ 10. <b>dt-round3tlblbr</b>: top left, bottom left, bottom right rounded           ▐▌
+ █                                                                            ▐▌
+ █ My ditaa box designs are <a href="http://www.mewbies.com/geek_fun_files/boxes/boxes_box_designs_for_ditaa.txt" target="_blank">HERE</a>, highlight/copy everything (or download the  ▐▌
+ █ file from <a href="http://www.mewbies.com/geek_fun_files/boxes/Boxes.Box.Designs.For.ditaa.v.01-MWB/mwbbxdt1.zip" target="_blank">here</a>), then:                                                     ▐▌
+ █ <b>pico ~/.boxes</b>                                                              ▐▌
+ █ Paste to the bottom of the file <i>one (1) line before: #EOF</i>                  ▐▌
+ █ Save file (Ctrl+x Enter then y)                                            ▐▌
+ █                                                                            ▐▌
+ █ Test design:                                                               ▐▌
+ █ <b>echo mewbies | boxes -d dt-point -a c</b>                                      ▐▌
+ █ Test with ditaa                                                            ▐▌
+ █ <b>cd ditaa</b>                                                                   ▐▌
+ █ <b>echo -e "\tmewbies.com\n\t{s} cC02" | boxes -d dt-point -a c -p \</b>          ▐▌
+ █ <b>a2t2b1  &gt; boxes_dt-point_ditaa.txt</b>                                         ▐▌
+ █ <b>java -jar ditaa0_9.jar boxes_dt-point_ditaa.txt</b>                            ▐▌
+ █                                                                            ▐▌
+                              <img alt="ditaa_point" src="ConsoleColor_fichiers/boxes_dt-point_ditaa.png" border="0" width="179" height="111">
+ █                                                                            ▐▌
+ █ <b>Note:</b>                                                                      ▐▌
+ █ To replace the system's boxes-config with the latest:                      ▐▌
+ █ <b>cd ~</b>                                                                       ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>mv /etc/boxes/boxes-config /etc/boxes/boxes-config_backup</b>                  ▐▌
+ █ <b>cp boxes-1.1.1/boxes-config /etc/boxes/boxes-config</b>                        ▐▌
+ █ <i>Or</i> if you have added new designs to the latest, for example:               ▐▌
+ █ <b>cp .boxes /etc/boxes/boxes-config</b>                                          ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █ Then you can re/move your ~./boxes if so desired:                          ▐▌
+ █ <b>mv .boxes .boxes_backup</b>                                                    ▐▌
+ █ <b>boxes -l</b>                                                                   ▐▌
+ █                                                                            ▐▌
+ █ <b>Wish List:</b>                                                                 ▐▌
+ █ 1. Option to change the direction of the shadow to the opposite side       ▐▌
+ █ 2. Change the color of the background or even better -                     ▐▌
+ █ 3. Background transparent (with shadow), though DittaEPS can do this -     ▐▌
+ █    if making a black diagram, the font is still black.                     ▐▌
+ █ 4. Change the font format (font, size, color)                              ▐▌
+ █                                                                            ▐▌
+                                <img alt="ditaa_cow" src="ConsoleColor_fichiers/cowboxed.png" border="0" width="150" height="135">
+ █                                                                            ▐▌
+ █ <b><a name="ditaaeps"></a>DITTA EPS ADDON:</b>                                                           ▐▌
+ █ ````````````````                                                           ▐▌
+ █ <a href="http://ditaa-addons.sourceforge.net/" target="_blank">Ditaa EPS</a> is an add-on that renders .eps instead of .png.                  ▐▌
+ █ Check the site for the lastest version then:                               ▐▌
+ █ <b>cd ~</b>                                                                       ▐▌
+ █ <b>wget http://jaist.dl.sourceforge.net/project/ditaa-addons/DitaaEps/0.2/DitaaEps-0_2.zip</b>
+ █ <b>unzip DitaaEps-0_2.zip &amp;&amp; cd DitaaEps</b>                                      ▐▌
+ █ <b>echo -e "\tmewbies.com\n\tcPNK" | boxes -d dt-round3tlblbr -a c -p \</b>       ▐▌
+ █ <b>a2t2b1 &gt; boxes_dt-round3tlblbr_ditaa_eps.txt</b>                               ▐▌
+ █ <b>java -jar DitaaEps.jar boxes_dt-round3tlblbr_ditaa_eps.txt</b>                 ▐▌
+ █                                                                            ▐▌
+ █ <b>echo -e "\tmewbies.com\n\tcPNK" | boxes -d dt-round3tlblbr -a c -p \</b>       ▐▌
+ █ <b>a2t2b1 &gt; boxes_dt-round3tlblbr_ditaa.txt</b>                                   ▐▌
+ █ <b>java -jar ditaa0_9.jar boxes_dt-round3tlblbr_ditaa.txt</b>                     ▐▌
+ █                                                                            ▐▌
+ █              Compare ditta.png     and    ditta.eps (converted to .png):   ▐▌
+ █                                                                            ▐▌
+                   <img alt="ditaa_compare" src="ConsoleColor_fichiers/boxes_dt-round3tlblbr_ditaa_compare.png" border="0" width="170" height="94"><img alt="ditaa_eps" src="ConsoleColor_fichiers/boxes_dt-round3tlblbr_ditaa_eps.png" border="0" width="170" height="95">
+ █                                                                            ▐▌
+ █ <b>Notes:</b>                                                                     ▐▌
+ █ 1. Ditta EPS uses ditaa v ditaa0_6b.jar thus why it is included in the zip.▐▌
+ █ 2. Black diagram does not change the color of the font to white; font is   ▐▌
+ █    also black.                                                             ▐▌
+ █                                                                            ▐▌
+ █ <b>Wish List:</b>                                                                 ▐▌
+ █ 1. Use the latest v of ditaa                                               ▐▌
+ █ 2. Black background; font color shouldn't be black                         ▐▌
+ █                                                                            ▐▌
+ █ <b>Extra</b>: <a href="http://pythonhosted.org/aafigure/" target="_blank">AAFigure</a> is another tool to convert ASCII line art diagrams to      ▐▌
+ █ images. View the many examples <a href="http://wiki.asciidoc-aafigure-filter.googlecode.com/hg/asciidoc-aafigure-readme.html" target="_blank">HERE</a>. The documentation covers well how to  ▐▌
+ █ install and use.                                                           ▐▌
+ █                                                                            ▐▌
+ █                          ___________..___________                          ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="linux_logo"></a>LINUX_LOGO - DISPLAY OS LOGO IN ANSI OR ASCII WITH SYSTEM INFORMATION:</b>     ▐▌
+ █ ``````````````````````````````````````````````````````````````````````     ▐▌
+ █ <a href="http://www.deater.net/weave/vmwprod/linux_logo/" target="_blank">Linux_Logo</a> is "A Color ANSI Logo with some system information that can be  ▐▌
+ █ displayed at system boot time or, with some local configuration, at the    ▐▌
+ █ login prompt". Linux (most architectures) and some non-Linux OSes. Debian  ▐▌
+ █ package info is <a href="https://packages.debian.org/squeeze/linuxlogo" target="_blank">HERE</a>. Included is twenty-six different logos.              ▐▌
+ █ This is another program that doesn't need a tutorial; silly easy to use    ▐▌
+ █ and usage is well documented, it's more to inform about this sweet tiny    ▐▌
+ █ program and show examples.                                                 ▐▌
+ █                                                                            ▐▌
+      <img alt="linux_logo" src="ConsoleColor_fichiers/linuxlogo_debian_default.png" border="0" width="541" height="199">
+ █                                                                            ▐▌
+ █ <b>INSTALL LINUX_LOGO:</b>                                                        ▐▌
+ █ View on <a href="http://www.deater.net/weave/vmwprod/linux_logo/" target="_blank">Linux_Logo</a> site various options for installing.                    ▐▌
+ █ By package manager on my Debian (compile yourself below):                  ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>aptitude install linuxlogo</b>                                                 ▐▌
+ █ My output: update-rc.d: warning: linuxlogo stop runlevel arguments (none)  ▐▌
+ █            do not match LSB Default-Stop values (0 1 6)                    ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █                                                                            ▐▌
+ █ <b>COMPILE YOURSELF (skip if you auto installed):</b>                             ▐▌
+ █ You'll need to have installed gcc or cc and xgettext:                      ▐▌
+ █ <b>dpkg -l | grep -E 'gcc|cc|xgettext'</b>                                        ▐▌
+ █ or easier to read: <b>which gcc &amp;&amp; which cc &amp;&amp; which xgettext</b>                 ▐▌
+ █ Install those needed, then:                                                ▐▌
+ █ <b>wget http://www.deater.net/weave/vmwprod/linux_logo/linux_logo-5.11.tar.gz</b> ▐▌
+ █ <b>tar xvfz linux_logo-5.11.tar.gz &amp;&amp; cd linux_logo-5.11</b>                      ▐▌
+ █ The README explains well how to install: <b>cat README | less</b>                 ▐▌
+ █ Quick example, if I were installing manually:                              ▐▌
+ █ If you want to install to a different location than the default:           ▐▌
+ █ /usr/local/                                                                ▐▌
+ █ For example:                                                               ▐▌
+ █ <b>./configure --prefix=/usr/local/bin</b>                                        ▐▌
+ █ <b>make</b>                                                                       ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>make install</b>                                                               ▐▌
+ █ <b>make logos-all</b>                                                             ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █                                                                            ▐▌
+ █ <b>USAGE:</b>                                                                     ▐▌
+ █ <b>linuxlogo</b>                                                                  ▐▌
+ █ Linux_Logo has a great man page: <b>man linuxlogo</b>                             ▐▌
+ █ List available logos:                                                      ▐▌
+ █ <b>linuxlogo -L list</b>                                                          ▐▌
+ █ Do this a few times to view some of the logos: <b>linux_logo -L random</b>        ▐▌
+ █ <b>linuxlogo -a</b>                                                               ▐▌
+ █ <b>linuxlogo -y -u</b>                                                            ▐▌
+<b>linuxlogo -L random_ea -F "  #O Version #V\nCompiled #C\n#N#M#X#T \</b>
+<b>Processor#S, #R RAM\n#B Bogomips Total\n#L\n#U\nmewbie@mewbies.com\n"</b>
+
+                            <a href="http://www.mewbies.com/geek_fun_files/linuxlogo/linuxlogo_examples.png" target="_blank"><img alt="linux_logo" src="ConsoleColor_fichiers/tlinuxlogo_examples.png" border="0" width="188" height="236"></a>
+ █                                                                            ▐▌
+ █ <b>ONCE YOU HAVE YOUR FAVORITE COMMAND LINE FOR LINUX_LOGO:</b>                   ▐▌
+ █ Once you have tweaked your cmd line you could add it to a config file so   ▐▌
+ █ all you need to do is run the cmd linuxlogo and it will execute your       ▐▌
+ █ entire cmd line.                                                           ▐▌
+ █ For just yourself; create the file:                                        ▐▌
+ █ <b>pico .linux_logo</b>                                                           ▐▌
+ █ Then paste in your desired cmd line without 'linuxlogo' and save changes.  ▐▌
+ █ For example paste in: -y -u -L random_ea                                   ▐▌
+ █ Or to have the same cmd line system wide (great to use on <a href="http://www.mewbies.com/how_to_customize_your_console_login_message_tutorial.htm" target="_blank">MOTD</a>):           ▐▌
+ █ <b>su</b>                                                                         ▐▌
+ █ <b>pico /etc/linux_logo.conf</b>                                                  ▐▌
+ █ Then paste in your desired cmd line without 'linuxlogo' on a new line at   ▐▌
+ █ the top of that file, and save changes.                                    ▐▌
+ █ <b>exit</b>                                                                       ▐▌
+ █                                                                            ▐▌
+ █ Test it:                                                                   ▐▌
+ █ <b>linuxlogo</b>                                                                  ▐▌
+ █                                                                            ▐▌
+ █ Some example scripts are included:                                         ▐▌
+ █ <b>ls /usr/share/doc/linuxlogo/examples</b>                                       ▐▌
+ █ <b>zcat /usr/share/doc/linuxlogo/README.CUSTOM_LOGOS.gz | less</b>                ▐▌
+ █                                                                            ▐▌
+ █ <b>DISPLAY THE ASCII VERSION COLORIZED:</b>                                       ▐▌
+ █ Using <a href="http://www.mewbies.com/motd_console_codes_color_chart_in_color_black_background.htm#tput" target="_blank">tput</a>:                                                                ▐▌
+ █ <b>tput setaf 2;tput bold;linuxlogo -a -L 15;tput sgr0</b>                        ▐▌
+ █ In rainbow using <a href="http://www.mewbies.com/acute_terminal_fun_08_get_colorized_on_the_terminal.htm#lolcat" target="_blank">lolcat</a>:                                                   ▐▌
+ █ <b>linuxlogo -a -L 16 | lolcat</b>                                                ▐▌
+ █ Frame it with <a href="http://www.mewbies.com/acute_terminal_fun_01_get_ascii-fied_on_the_terminal.htm#boxes" target="_blank">boxes</a>:                                                       ▐▌
+ █ <b>linuxlogo -a | boxes -d peek -pa2t0b0 | lolcat</b>                             ▐▌
+ █ In rainbow using <a href="http://www.mewbies.com/acute_terminal_fun_01_get_ascii-fied_on_the_terminal.htm#toilet" target="_blank">TOIlet</a>:                                                   ▐▌
+ █ <b>linuxlogo -a -L 20 | toilet --gay -f term</b>                                  ▐▌
+ █                                                                            ▐▌
+                          <a href="http://www.mewbies.com/geek_fun_files/linuxlogo/linuxlogo_ascii_colorized.png" target="_blank"><img alt="linux_logo" src="ConsoleColor_fichiers/tlinuxlogo_ascii_colorized.png" border="0" width="208" height="236"></a>
+ █                                                                            ▐▌
+ █ <b>KEEP LOGO ON TOP OF TERMINAL WINDOW:</b>                                       ▐▌
+ █ Read the <a href="http://www.deater.net/weave/vmwprod/linux_logo/USAGE" target="_blank">USAGE</a> and the <a href="http://www.deater.net/weave/vmwprod/linux_logo/LINUX_LOGO.FAQ" target="_blank">FAQ</a> for more ideas how to use it. For example from  ▐▌
+ █ Bill Anderson on the FAQ, to keep the logo on top of your terminal window  ▐▌
+ █ (per session, 18 lines on top for logo, leaving 25 rows of 'scrolling      ▐▌
+ █ region' above your prompt line):                                           ▐▌
+ █ <b>clear; /bin/echo -e '\033[018;25r' ; linux_logo</b>                            ▐▌
+ █ Test, for example: <b>pstree -acpu</b>                                            ▐▌
+ █ Turn it off: <b>/bin/echo -e '\033[0;0r'</b>                                      ▐▌
+ █ Larger region, for example 20 rows for logo, 70 rows for region (if your   ▐▌
+ █ terminal window is long enough):                                           ▐▌
+ █ <b>clear; /bin/echo -e '\033[020;70r' ; linux_logo</b>                            ▐▌
+ █                                                                            ▐▌
+ █                          ___________..___________                          ▐▌
+ █                                                                            ▐▌
+ █ <b><a name="clock"></a>DISPLAY A CLOCK ON YOUR TERMINAL (LINUX):</b>                                  ▐▌
+ █ `````````````````````````````````````````                                  ▐▌
+ █ Watch "execute a program periodically, showing output fullscreen".         ▐▌
+ █ I ride my stationary bicycle by my computer and this is a nice way to have ▐▌
+ █ a clock large enough to view.                                              ▐▌
+ █                                                                            ▐▌
+ █ <b>COMBINED WITH FIGLET:</b>                                                      ▐▌
+ █ Thanks to the article <a href="http://www.linux.com/learn/docs/686943-linux-tips-fun-with-figlet-and-toilet" target="_blank">HERE</a> at linux.com and the replies:                   ▐▌
+ █ Shows the current date and time live; updates every 1 second:              ▐▌
+ █ <b>watch -n1 "date '+%D%n%T'| figlet -k"</b>                                      ▐▌
+ █ To exit any of the examples below press Crtl+c.                            ▐▌
+ █                                                                            ▐▌
+ █ Lets make it prettier and put boxes with it:                               ▐▌
+ █ <b>watch -n1 "date '+%D%n%T'| figlet -k | boxes -a c -s 59 -d cat"</b>            ▐▌
+ █                             /\             /\                              ▐▌
+ █                            |`\\_,--="=--,_//`|                             ▐▌
+ █                            \ ."  :'. .':  ". /                             ▐▌
+ █                           ==)  _ :  '  : _  (==                            ▐▌
+ █                             |&gt;/O\   _   /O\&lt;|                              ▐▌
+ █                             | \-"~` _ `~"-/ |                              ▐▌
+ █                            &gt;|`===. \_/ .===`|&lt;                             ▐▌
+ █                      .-"-.   \==='  |  '===/   .-"-.                       ▐▌
+ █        .------------{'. '`}---\,  .-'-.  ,/---{.'. '}------------.         ▐▌
+ █         )           `"---"`     `~-===-~`     `"---"`           (          ▐▌
+ █        (      ___   _  _      __ ____   ___     __ _  _____      )         ▐▌
+ █         )    / _ \ | || |    / /|___ \ ( _ )   / // ||___ /     (          ▐▌
+ █        (    | | | || || |_  / /   __) |/ _ \  / / | |  |_ \     )          ▐▌
+ █         )   | |_| ||__   _|/ /   / __/| (_) |/ /  | | ___) |    (          ▐▌
+ █        (     \___/    |_| /_/   |_____|\___//_/   |_||____/      )         ▐▌
+ █         )                                                       (          ▐▌
+ █        (       ___   _  _      _____ _____    _____  _  _        )         ▐▌
+ █         )     / _ \ | || |  _ |___ /|___ / _ |___ / | || |      (          ▐▌
+ █        (     | | | || || |_(_)  |_ \  |_ \(_)  |_ \ | || |_      )         ▐▌
+ █         )    | |_| ||__   _|_  ___) |___) |_  ___) ||__   _|    (          ▐▌
+ █        (      \___/    |_| (_)|____/|____/(_)|____/    |_|       )         ▐▌
+ █         )                                                       (          ▐▌
+ █        '---------------------------------------------------------'         ▐▌
+ █                                                                            ▐▌
+ █ And to change it to green (no space after \):                              ▐▌
+ █ <b>while true; do clear; echo -e "\e[01;32m$(date '+%D %T' | figlet -k | \</b>    ▐▌
+ █ <b>boxes -a c -s 59 -d dog)\e[00m"; sleep 1; done</b>                             ▐▌
+ █                                                                            ▐▌
+ █ <b>USING TOILET:</b>                                                              ▐▌
+ █ Colorized, small and framed:                                               ▐▌
+ █ <b>while true; do clear; echo "$(date '+%D %T' | toilet -f term -F border \</b>   ▐▌
+ █ <b>--gay)"; sleep 1; done</b>                                                     ▐▌
+ █                                                                            ▐▌
+ █ <b>USING FIGLET AND COWSAY:</b>                                                   ▐▌
+ █ <b>watch -n1 "date '+%D%n%T'| figlet -f term | cowsay"</b>                        ▐▌
+ █                                                                            ▐▌
+ █ <b>USING TOILET AND COWSAY:</b>                                                   ▐▌
+ █ <b>while true; do clear; echo "$(date '+%D %T' | cowsay | toilet -f term \</b>    ▐▌
+ █ <b>--gay)"; sleep 1; done</b>                                                     ▐▌
+ █                                                                            ▐▌
+ █ P.S. Some 'watch' color examples/notes (man watch):                        ▐▌
+ █ '--color' does not give watch color if it isn't there. '--color' lets      ▐▌
+ █ 'watch' read out the color if present already in the existing output, for  ▐▌
+ █ example <a href="http://www.mewbies.com/motd_console_codes_color_chart_in_color_black_background.htm#tput" target="_blank">tput</a>:                                                              ▐▌
+ █ <b>watch --color 'tput setaf 1; echo TEST'</b>                                    ▐▌
+ █ <b>watch --color ls -l --color</b>                                                ▐▌
+ █ <b>watch --color -n 1 "echo -e '\033[32mTEST\033[0m'"</b>                         ▐▌
+ █ <b>while [ 1 ]; do clear; echo -e '\033[32mTEST\033[0m'; sleep 1; done</b>        ▐▌
+ █ <b>watch --color "ls -a1 --color"</b>                                             ▐▌
+ █ View your color controls used on for example 'ls -al':                     ▐▌
+ █ <b>watch "ls -al --color | cat -v"</b>                                            ▐▌
+ █                                                                            ▐▌
+ █ Some others that aren't ASCII-fied but still very sweet:                   ▐▌
+ █ <b>BINCLOCK:</b>                                                                  ▐▌
+ █ <a href="http://www.ngolde.de/binclock.html" target="_blank">BinClock</a> "Displays system time in binary format. ... If you want to learn  ▐▌
+ █ how to read binary, do this with binclock :)". Debian package <a href="https://packages.debian.org/squeeze/binclock" target="_blank">info</a>.        ▐▌
+ █                                                                            ▐▌
+                 <img alt="binclock" src="ConsoleColor_fichiers/binclock.png" border="0" width="353" height="214">
+ █                                                                            ▐▌
+ █ Either download and compile yourself from <a href="http://www.ngolde.de/binclock.html" target="_blank">HERE</a>.                            ▐▌
+ █ Or via package manager like normal:                                        ▐▌
+ █ <b>su</b>    <b>aptitude install binclock</b>    <b>exit</b>                                    ▐▌
+ █ <b>binclock</b>                                                                   ▐▌
+ █ Normal (binary + normal):                                                  ▐▌
+ █ <b>binclock -n</b>                                                                ▐▌
+ █ Traditional:                                                               ▐▌
+ █ <b>binclock -t</b>                                                                ▐▌
+ █ Loops (every one second):                                                  ▐▌
+ █ <b>binclock -l</b>                                                                ▐▌
+ █                                                                            ▐▌
+ █ <b>man binclock</b>                                                               ▐▌
+ █ <b>binclock --help</b>                                                            ▐▌
+ █ <b>cat /usr/share/doc/binclock/README</b>                                         ▐▌
+ █                                                                            ▐▌
+ █ <b>CONSOLE USE FULL SCREEN WITH TIME &amp; DATE TOP RIGHT CORNER:</b>                 ▐▌
+ █ Thanks to the post at <a href="http://www.commandlinefu.com/commands/view/7916/put-a-console-clock-in-top-right-corner" target="_blank">commandlinefu.com</a> by glaudiston:                     ▐▌
+ █ <b>while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29))\</b>                  ▐▌
+ █ <b>;date;tput rc;done &amp;</b>                                                       ▐▌
+ █ To stop it:                                                                ▐▌
+ █ <b>killall -9 sleep</b>                                                           ▐▌
+ █ And I added <a href="http://www.mewbies.com/motd_console_codes_color_chart_in_color_black_background.htm#tput" target="_blank">color</a>:                                                         ▐▌
+ █ <b>while sleep 1;do tput sc;tput bold;tput setaf 5;tput cup 0 \</b>               ▐▌
+ █ <b>$(($(tput cols)-29));date;tput rc;done &amp;</b>                                   ▐▌
+ █ Add to the bottom of your ~/.bashrc if you want it each time you login.    ▐▌
+ █                                                                            ▐▌
+ █ <b>STOP WATCH:</b>                                                                ▐▌
+ █ Set a stop watch, though you can't view it running, by using:              ▐▌
+ █ <b>time cat</b>                                                                   ▐▌
+ █ Press Ctrl+ c to stop it and view the time results, for example:           ▐▌
+ █ real    0m4.496s                                                           ▐▌
+ █ user    0m0.000s                                                           ▐▌
+ █ sys     0m0.004s                                                           ▐▌
+ █                                                                            ▐▌
+ █ <b>INSERT TIME INTO COMMAND PROMPT LINE:</b>                                      ▐▌
+ █ Thanks to <a href="http://www.thegeekstuff.com/2008/09/bash-shell-ps1-10-examples-to-make-your-linux-prompt-like-angelina-jolie/" target="_blank">thegeekstuff.com</a> for many ideas to 'add' the time in your prompt ▐▌
+ █ line (this will only show per session):                                    ▐▌
+ █ <b>export PS1="${PS1%\\\$*}"'\t \$'</b>                                           ▐▌
+ █ (PS = prompt string)                                                       ▐▌
+ █ So instead of viewing for example:                                         ▐▌
+ █ mewbies@mybox:~$                                                           ▐▌
+ █ You would have this:                                                       ▐▌
+ █ mewbies@mybox:~08:17:09 $                                                  ▐▌
+ █                                                                            ▐▌
+ █ Another format:                                                            ▐▌
+ █ <b>export PS1="\u@\h [\$(date +%k:%M:%S)]&gt; "</b>                                  ▐▌
+ █ Which would be:                                                            ▐▌
+ █ mewbies@mybox [ 8:18:31]&gt;                                                  ▐▌
+ █ And to show AM PM:                                                         ▐▌
+ █<b> export PS1="[\@] \u@\h$ "</b>                                                  ▐▌
+ █ Which would be:                                                            ▐▌
+ █ [08:19 AM] mewbies@mybox$                                                  ▐▌
+ █                                                                            ▐▌
+ █ To permanently add it to your user line, add it to your .bashrc:           ▐▌
+ █ <b>pico .bashrc</b>                                                               ▐▌
+ █ Add these two lines at the bottom of the file:                             ▐▌
+ █ # Login User Clock                                                         ▐▌
+ █ export PS1="${PS1%\\\$*}"'\t \$'                                           ▐▌
+ █                                                                            ▐▌
+ █ You could also add it for all the users:                                   ▐▌
+ █ <b>pico /etc/bash.bashrc</b>                                                      ▐▌
+ █                                                                            ▐▌
+ █ For more PS1 ideas and examples view <a href="http://www.mewbies.com/acute_terminal_fun_08_get_colorized_on_the_terminal.htm#ps1" target="_blank"><s>HERE</s></a>(working on it).                  ▐▌
+ █ For more PS1 information: <b><a href="http://linux.die.net/man/1/bash" target="_blank">man bash</a></b> (search for PS1).                       ▐▌
+ █                                                                            ▐▌
+ █ //----------------------------------------------------------------------   ▐▌
+ █                                                                            ▐▌
+ █ If you find mistakes, have suggestions, and or questions please post at    ▐▌
+ █ mewbies forum <a href="http://mewbies.com/mewbies_posting/index.php" target="_blank">HERE</a> - thank you.                                            ▐▌
+ █                                                                            ▐▌
+ █ Last update on 06 Dec '13                                                  ▐▌
+ █                                                                            ▐▌
+ █▌                                                                           █▌
+  █▌                          -   mewbies.com   -                            █▌
+   █▌                                                                       █▌
+    ██▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄██
+ </pre>
+ <div id="stwrapper" class="stwrapper stwrapper5x stwrapper5x" style="display: none;"><iframe allowtransparency="true" id="stLframe" class="stLframe" name="stLframe" scrolling="no" src="ConsoleColor_fichiers/index.html" frameborder="0"></iframe></div><div id="stOverlay" onclick="javascript:stWidget.closeWidget();"></div></body></html>
