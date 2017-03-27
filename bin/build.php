@@ -16,7 +16,7 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 //	echo $colors->getColoredString("Testing Colors class, this is cyan string on green background.", "cyan", "green") . "\n";
 	
         echo "\n" ; 
-        echo $colors->getColoredString('==============================================================================', "red", null ) . "\n";
+        echo $colors->getColoredString('==============================================================================', "cyan", null ) . "\n";
         echo $colors->getColoredString("   ______                           _ __  ____        _ __    __         
   / ____/___  ________  ______   __(_) /_/ __ )__  __(_) /___/ /__  _____
  / /   / __ \/ ___/ _ \/ ___/ | / / / __/ __  / / / / / / __  / _ \/ ___/
@@ -24,8 +24,8 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 \____/\____/____/\___/_/    |___/_/\__/_____/\__,_/_/_/\__,_/\___/_/     
 ", "cyan") . "\n";
 
-        echo $colors->getColoredString('Version 1.0.0 *** last build 2017-03-26 10h00 by nadir.fouka@gmail.com', "cyan", null ) . "\n";
-        echo $colors->getColoredString('==============================================================================', "red", null ) . "\n";
+        echo $colors->getColoredString('                                                          Version 1.0.0', "red", null ) . "\n";
+        echo $colors->getColoredString('==============================================================================', "cyan", null ) . "\n";
 
 $application = new Application();
 $application->add(new \Cli\AppCommandSymfony());

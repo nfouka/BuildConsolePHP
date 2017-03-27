@@ -103,7 +103,7 @@ $timestamp_debut = microtime(true);
 print_r($stmt->fetchAll(\PDO::FETCH_COLUMN));
 $timestamp_fin = microtime(true);
 $difference_ms = $timestamp_fin - $timestamp_debut;
- $style = new \Symfony\Component\Console\Style\SymfonyStyle($input, $output);
+$style = new \Symfony\Component\Console\Style\SymfonyStyle($input, $output);
 $style->success('temps d excution est :'.$difference_ms );
 
     }

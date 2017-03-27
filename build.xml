@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="buildConsole" default="all">
 
- <target name="all" depends="clean,update,build" description="Performs static analysis, runs the tests, and generates project documentation"/>
+ <target name="all" depends="clean,update,build,files" description="Performs static analysis, runs the tests, and generates project documentation"/>
 
  <target name="clean" unless="clean.done" description="Cleanup build artifacts">
   <delete dir="${basedir}/vendor"/>
@@ -24,6 +24,12 @@
  </target>
 
 
+  <target name="files"  description="Measure project size using PHPLOC and print human readable output. Intended for usage on the command line.">
+  <exec executable="php" taskname="box">
+   <arg value="files.php"/>
+  </exec>
+  <property name="phploc.done" value="true"/>
+ </target>
 
  
 </project>
