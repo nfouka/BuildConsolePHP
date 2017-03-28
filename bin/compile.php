@@ -20,9 +20,10 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
+
 class compile extends BaseApplication {
    
-
+    
      public function getHelp()
     {
         $colors = new Cli\Colors();
@@ -46,10 +47,12 @@ $loader = new XmlFileLoader($container, new FileLocator(__DIR__."/../conf"));
 $loader->load('services/services.xml');
 
 
-$container->get('mailer') ; 
+
+print $container->getParameter('database_driver') ; 
+
 
 $application = new compile() ; 
-$application->add(new \Cli\AppCommandSymfony());
+$application->add(new \Cli\AppCommandSymfony  );
 $application->add(new \Cli\AppCommandSymfony_1);
 $application->run();
 

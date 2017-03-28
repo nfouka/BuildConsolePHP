@@ -25,17 +25,9 @@ $files = new RecursiveIteratorIterator(
     new RecursiveDirectoryIterator($filePath),
     RecursiveIteratorIterator::SELF_FIRST);
 foreach($files as $name => $file){
-	
-
-
 	echo $colors->getColoredString($name, "black", "green") . "\n";
-	
-
 }
 
-
-
- 
 
 ?> 
  

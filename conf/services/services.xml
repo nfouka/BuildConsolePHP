@@ -5,6 +5,7 @@
 
     <parameters>
         <parameter key="mailer.transport">sendmail</parameter>
+        <parameter key="database_driver">pdo_mysql</parameter>
     </parameters>
 
     <services>
