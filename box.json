@@ -7,7 +7,7 @@
   "directories": [
     "vendor","src"
   ],
-  "files": [],
+  "files": ["conf/services/services.xml"],
   "output": "build.phar",
   "stub": true
 }
