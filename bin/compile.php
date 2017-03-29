@@ -19,6 +19,8 @@ use Symfony\Component\Console\Application as BaseApplication;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+
 
 
 class compile extends BaseApplication {
@@ -45,16 +47,27 @@ class compile extends BaseApplication {
 $container = new ContainerBuilder();
 $loader = new XmlFileLoader($container, new FileLocator(__DIR__."/../conf"));
 $loader->load('services/services.xml');
+$dispatcher = new EventDispatcher();
 
 
+$listener = new AcmeListener();
+$dispatcher->addListener(  \EventDispatcher\MyEvent::NAME  , array($listener, 'onFooAction'));
 
-print $container->getParameter('database_driver') ; 
+
+$event = new \EventDispatcher\MyEvent("Nadir Fouka","45 Rue marius blanchet 80008 paris") ; 
+$dispatcher->dispatch( \EventDispatcher\MyEvent::NAME , $event) ; 
 
 
 $application = new compile() ; 
-$application->add(new \Cli\AppCommandSymfony  );
-$application->add(new \Cli\AppCommandSymfony_1);
+$application->add(new \Cli\AppCommandSymfony     );
 $application->run();
 
 
-	
+class AcmeListener
+{
+
+    public function onFooAction( \EventDispatcher\MyEvent $event)
+    {
+                    print_r($event) ; 
+    }
+}
