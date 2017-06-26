@@ -5,6 +5,9 @@
 
     <parameters>
         <parameter key="key_blablaCar">2298fcc6e9e6487f9603070d6fceb929</parameter>
+        <parameter key="mongo_url_mongo">mongodb://localhost:27017</parameter>
+        <parameter key="database">dataManager</parameter>
+        <parameter key="collection">DATA</parameter>
     </parameters>
 
     <services>
