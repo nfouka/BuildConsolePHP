@@ -32,8 +32,24 @@ class compile extends BaseApplication {
         return  
         
         $colors->getColoredString('==============================================================================', "red", null ) . "\n".
-        $colors->getColoredString("API BlaBla CAR DATA ", "cyan") .
-        $colors->getColoredString('Version 1.0.0', "red", null ) . "\n" .         
+        $colors->getColoredString(""
+                . ""
+                . " 
+    ____  __      ____  __         ___    ____  ____
+   / __ )/ /___ _/ __ )/ /___ _   /   |  / __ \/  _/
+  / __  / / __ `/ __  / / __ `/  / /| | / /_/ // /  
+ / /_/ / / /_/ / /_/ / / /_/ /  / ___ |/ ____// /   
+/_____/_/\__,_/_____/_/\__,_/  /_/  |_/_/   /___/   
+                                                    
+   _____________   ____________  ___  __________  ____ 
+  / ____/ ____/ | / / ____/ __ \/   |/_  __/ __ \/ __ \
+ / / __/ __/ /  |/ / __/ / /_/ / /| | / / / / / / /_/ /
+/ /_/ / /___/ /|  / /___/ _, _/ ___ |/ / / /_/ / _, _/ 
+\____/_____/_/ |_/_____/_/ |_/_/  |_/_/  \____/_/ |_|  
+                                                                                
+"
+                . "", "cyan") .
+        $colors->getColoredString('Author : nadir.fouka@univ-grenoble-alpes.fr', "green", "black" ) . "\n" .         
        "\n". parent::getHelp()."\n".$colors->getColoredString('==============================================================================', "red", null ) . "\n" ; 
     }
 

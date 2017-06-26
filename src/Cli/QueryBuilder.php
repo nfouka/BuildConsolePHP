@@ -16,8 +16,6 @@ namespace Cli;
 
 class QueryBuilder {
     
-    
-    static $key = '2298fcc6e9e6487f9603070d6fceb929' ; 
 
     private $fn ; 
     private $tn ; 

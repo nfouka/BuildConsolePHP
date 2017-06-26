@@ -25,9 +25,10 @@ class AppCommandSymfony extends \Symfony\Component\Console\Command\Command
 
 
 	$this
-			->setName('load_data')
-			->setDescription('Loading all data from api blabla api')
-			->setHelp('This command allows you to create a user...') ;
+		->setName('load_data')
+		->setDescription("Example ./build.phar load_data 'Paris' 'London' 'en_GB' '45.1667|5.7167' '45.75|4.85' 'EUR' '10000' 'json' 7 14 '' 1 'desc' 10 'trip_price' 1" )
+	        ->setHelp("example : ./build.phar load_data 'Paris' 'London' 'en_GB' '45.1667|5.7167' "
+                        . "'45.75|4.85' 'EUR' '10000' 'json' 7 14 '' 1 'desc' 10 'trip_price' 1' ") ;
                 
                 
         $this
@@ -52,10 +53,7 @@ class AppCommandSymfony extends \Symfony\Component\Console\Command\Command
      
         
     }
- /*
-  *         <parameter key="dataManager">dataManager</parameter>
-        <parameter key="db">blabla_data</parameter>
-  */
+
     protected function execute(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output)
     {	
 
@@ -65,12 +63,22 @@ class AppCommandSymfony extends \Symfony\Component\Console\Command\Command
                 new \Symfony\Component\Config\FileLocator(__DIR__."/../../conf/db/parameters.yml"));
                 $loader->load(__DIR__.'/../../conf/services/services.xml');
         
-                 $arg1  =    $input->getArgument('arg1');$arg2  =    $input->getArgument('arg2');$arg3  =    $input->getArgument('arg3');
-                 $arg4  =    $input->getArgument('arg4');$arg5  =    $input->getArgument('arg5');$arg6  =    $input->getArgument('arg6');
-                 $arg7  =    $input->getArgument('arg7');$arg8  =    $input->getArgument('arg8');$arg9  =    $input->getArgument('arg9');
-                 $arg10  =    $input->getArgument('arg10');$arg11  =    $input->getArgument('arg11');$arg12  =    $input->getArgument('arg12');
-                 $arg13  =    $input->getArgument('arg13');$arg14  =    $input->getArgument('arg14');$arg15  =    $input->getArgument('arg15');
-                 $arg16  =    $input->getArgument('arg16');
+                 $arg1      =    $input->getArgument('arg1');
+                 $arg2      =    $input->getArgument('arg2');
+                 $arg3      =    $input->getArgument('arg3');
+                 $arg4      =    $input->getArgument('arg4');
+                 $arg5      =    $input->getArgument('arg5');
+                 $arg6      =    $input->getArgument('arg6');
+                 $arg7      =    $input->getArgument('arg7');
+                 $arg8      =    $input->getArgument('arg8');
+                 $arg9      =    $input->getArgument('arg9');
+                 $arg10     =    $input->getArgument('arg10');
+                 $arg11     =    $input->getArgument('arg11');
+                 $arg12     =    $input->getArgument('arg12');
+                 $arg13     =    $input->getArgument('arg13');
+                 $arg14     =    $input->getArgument('arg14');
+                 $arg15     =    $input->getArgument('arg15');
+                 $arg16     =    $input->getArgument('arg16');
                  
                  $collection = (new ClientManager($container->getParameter('mongo_url_mongo'), array()) )
                          

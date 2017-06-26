@@ -1,35 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="buildConsole" default="all">
 
- <target name="all" depends="clean,update,build,files" description="Performs static analysis, runs the tests, and generates project documentation"/>
+ <target name="all" depends="t1,t2,t3,t4,t5" description="Performs static analysis, runs the tests, and generates project documentation"/>
 
- <target name="clean" unless="clean.done" description="Cleanup build artifacts">
-  <delete dir="${basedir}/vendor"/>
-  <delete file="${basedir}/build.phar"/>
- </target>
-
-
- <target name="update"  description="Measure project size using PHPLOC and print human readable output. Intended for usage on the command line.">
-  <exec executable="composer" taskname="composer">
-   <arg value="update"/>
+ 
+ <target name="t1"  description="trajet info">
+  <exec executable="php" taskname="box">        
+            <arg value="build.phar"/>
+            <arg value="load_data"/>
+            <arg value="Paris"/>
+            <arg value="Marseille"/>
+            <arg value="en_GB"/>
+            <arg value="45.1667|5.7167"/>
+            <arg value="46.75|4.85"/>
+            <arg value="EUR"/>
+            <arg value="10000"/>
+            <arg value="json"/>
+            <arg value="7"/>
+            <arg value="17"/>
+            <arg value=""/>
+            <arg value="1"/>
+            <arg value="desc"/>
+            <arg value="10"/>
+            <arg value="trip_price"/>
+            <arg value="1"/>
   </exec>
-  <property name="phploc.done" value="true"/>
  </target>
  
-  <target name="build"  description="Measure project size using PHPLOC and print human readable output. Intended for usage on the command line.">
-  <exec executable="box" taskname="box">
-   <arg value="build"/>
+  <target name="t2"  description="trajet info">
+  <exec executable="php" taskname="box">        
+            <arg value="build.phar"/>
+            <arg value="load_data"/>
+            <arg value="Paris"/>
+            <arg value="Marseille"/>
+            <arg value="en_GB"/>
+            <arg value="45.1667|5.7167"/>
+            <arg value="46.75|4.85"/>
+            <arg value="EUR"/>
+            <arg value="10000"/>
+            <arg value="json"/>
+            <arg value="7"/>
+            <arg value="17"/>
+            <arg value=""/>
+            <arg value="1"/>
+            <arg value="desc"/>
+            <arg value="10"/>
+            <arg value="trip_price"/>
+            <arg value="1"/>
   </exec>
-  <property name="phploc.done" value="true"/>
  </target>
+ 
+ 
+  <target name="t3"  description="trajet info">
+  <exec executable="php" taskname="box">        
+            <arg value="build.phar"/>
+            <arg value="load_data"/>
+            <arg value="Paris"/>
+            <arg value="Marseille"/>
+            <arg value="en_GB"/>
+            <arg value="45.1667|5.7167"/>
+            <arg value="46.75|4.85"/>
+            <arg value="EUR"/>
+            <arg value="10000"/>
+            <arg value="json"/>
+            <arg value="7"/>
+            <arg value="17"/>
+            <arg value=""/>
+            <arg value="1"/>
+            <arg value="desc"/>
+            <arg value="10"/>
+            <arg value="trip_price"/>
+            <arg value="1"/>
+  </exec>
+ </target>
+ 
+ 
+  <target name="t4"  description="trajet info">
+  <exec executable="php" taskname="box">        
+            <arg value="build.phar"/>
+            <arg value="load_data"/>
+            <arg value="Paris"/>
+            <arg value="Marseille"/>
+            <arg value="en_GB"/>
+            <arg value="45.1667|5.7167"/>
+            <arg value="46.75|4.85"/>
+            <arg value="EUR"/>
+            <arg value="10000"/>
+            <arg value="json"/>
+            <arg value="7"/>
+            <arg value="17"/>
+            <arg value=""/>
+            <arg value="1"/>
+            <arg value="desc"/>
+            <arg value="10"/>
+            <arg value="trip_price"/>
+            <arg value="1"/>
+  </exec>
+ </target>
+ 
+  <target name="t5"  description="trajet info">
+  <exec executable="php" taskname="box">        
+            <arg value="build.phar"/>
+            <arg value="load_data"/>
+            <arg value="Paris"/>
+            <arg value="Marseille"/>
+            <arg value="en_GB"/>
+            <arg value="45.1667|5.7167"/>
+            <arg value="46.75|4.85"/>
+            <arg value="EUR"/>
+            <arg value="10000"/>
+            <arg value="json"/>
+            <arg value="7"/>
+            <arg value="17"/>
+            <arg value=""/>
+            <arg value="1"/>
+            <arg value="desc"/>
+            <arg value="10"/>
+            <arg value="trip_price"/>
+            <arg value="1"/>
+  </exec>
+ </target>
+ 
 
 
-  <target name="files"  description="Measure project size using PHPLOC and print human readable output. Intended for usage on the command line.">
-  <exec executable="php" taskname="box">
-   <arg value="files.php"/>
-  </exec>
-  <property name="phploc.done" value="true"/>
- </target>
 
  
 </project>
