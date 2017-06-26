@@ -52,15 +52,18 @@ class AppCommandSymfony extends \Symfony\Component\Console\Command\Command
      
         
     }
-
+ /*
+  *         <parameter key="dataManager">dataManager</parameter>
+        <parameter key="db">blabla_data</parameter>
+  */
     protected function execute(\Symfony\Component\Console\Input\InputInterface $input, \Symfony\Component\Console\Output\OutputInterface $output)
     {	
-        
+
         $container = new \Symfony\Component\DependencyInjection\ContainerBuilder();
         $loader = new \Symfony\Component\DependencyInjection\Loader\XmlFileLoader(
                 $container, 
-                new \Symfony\Component\Config\FileLocator("/home/nadir/Bureau/blablaCarBuilder/BuildConsolePHP/conf/db/parameters.yml"));
-                $loader->load('/home/nadir/Bureau/blablaCarBuilder/BuildConsolePHP/conf/services/services.xml');
+                new \Symfony\Component\Config\FileLocator(__DIR__."/../../conf/db/parameters.yml"));
+                $loader->load(__DIR__.'/../../conf/services/services.xml');
         
                  $arg1  =    $input->getArgument('arg1');$arg2  =    $input->getArgument('arg2');$arg3  =    $input->getArgument('arg3');
                  $arg4  =    $input->getArgument('arg4');$arg5  =    $input->getArgument('arg5');$arg6  =    $input->getArgument('arg6');
@@ -69,8 +72,13 @@ class AppCommandSymfony extends \Symfony\Component\Console\Command\Command
                  $arg13  =    $input->getArgument('arg13');$arg14  =    $input->getArgument('arg14');$arg15  =    $input->getArgument('arg15');
                  $arg16  =    $input->getArgument('arg16');
                  
-                 $collection = (new \MongoDB\Client() )->dataManager->blabla_data;
-                 
+                 $collection = (new ClientManager($container->getParameter('mongo_url_mongo'), array()) )
+                         
+                                ->selectCollection(
+                                        $container->getParameter('database'), 
+                                        $container->getParameter('collection')
+                                        ) ; 
+
                 $curl = curl_init();
                 $url = new QueryBuilder(                
                                         $arg1 ,
@@ -90,7 +98,7 @@ class AppCommandSymfony extends \Symfony\Component\Console\Command\Command
                                         $arg15 ,
                                         $arg16 
                         ) ;
-//($hb, $he, $photo, $seats, $order, $radius, $sort, $page)
+
 curl_setopt_array($curl, array(
   CURLOPT_URL => $url->executeQuery() , 
   CURLOPT_RETURNTRANSFER => true,
@@ -150,6 +158,6 @@ if ($err) {
 
     }
     
-    
+
     
 }
