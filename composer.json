@@ -4,7 +4,7 @@
         "symfony/yaml": "3.2.6",
         "symfony/process": "^3.2",
         "symfony/dependency-injection": "^3.2",
-        "symfony/config": "^3.2" , 
+        "symfony/config": "^3.3" , 
         "mongodb/mongodb": "1.0.5"
     },
    "autoload": {
