@@ -1,6 +1,8 @@
 <?php
 
 
+namespace Cli;
+
 class nadir
 {
 

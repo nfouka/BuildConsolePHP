@@ -28,9 +28,26 @@ class compile extends BaseApplication {
     
      public function getHelp()
     {
+
+
         $colors = new Cli\Colors();
-        return  
-        
+        return
+
+
+            $test1 = "test" ;
+        $test2 = "test" ;
+        $test3 = "test" ;
+
+
+        $array = array('premier' => 'N° 1', 'deuxieme' => 'N° 2', 'troisieme' => 'N° 3');
+
+        foreach ($array as $key => $value)
+            echo 'Cet élément a pour clé "' . $key . '" et pour valeur "' . $value . '"<br />';
+
+
+
+
+
         $colors->getColoredString('==============================================================================', "red", null ) . "\n".
         $colors->getColoredString(""
                 . ""
@@ -54,7 +71,7 @@ class compile extends BaseApplication {
     }
 
 }
-
+$array = array( 'premier' => 'N° 1', 'deuxieme' => 'N° 2', 'troisieme' => 'N° 3');
 $container = new ContainerBuilder();
 $loader = new XmlFileLoader($container, new FileLocator(__DIR__."/../conf"));
 $loader->load('services/services.xml');
@@ -62,3 +79,4 @@ $loader->load('services/services.xml');
 $application = new compile() ; 
 $application->add(new \Cli\AppCommandSymfony() );
 $application->run();
+
