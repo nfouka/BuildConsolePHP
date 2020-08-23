@@ -25,7 +25,6 @@ class QueryBuilder {
     private $cur ; 
     private $limit ; 
     private $format ; 
-    
     private $hb ; 
     private $he ; 
     private $photo ; 
