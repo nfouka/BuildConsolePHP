@@ -5,10 +5,6 @@
 
 
 
-
-
-
-
 require __DIR__.'/vendor/autoload.php';
 
 $test1 = "test" ;
