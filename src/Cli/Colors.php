@@ -20,7 +20,7 @@ namespace Cli;
 		private $background_colors = array();
 
 		public function __construct() {
-			// Set up shell colors
+			// Set up shell colorscoor
 			$this->foreground_colors['black'] = '0;30';
 			$this->foreground_colors['dark_gray'] = '1;30';
 			$this->foreground_colors['blue'] = '0;34';
